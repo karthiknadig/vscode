@@ -1,0 +1,417 @@
+{
+  "issue": 334892,
+  "checkoutHead": "7741eed6c238c3ef6829e4c8ca9f92fa736267af",
+  "workingTreeChanges": "",
+  "scope": "Actual renderer encoder, synthetic buffers capped at 4 MiB; not a full plugin-sync or crash reproduction.",
+  "warmupRunsPerCase": 1,
+  "measuredRunsPerCase": 5,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) code-oss-dev/1.141.0 Chrome/150.0.7871.250 Electron/43.7.5 Safari/537.36",
+    "nativeToBase64": true,
+    "root": "vscode-file://vscode-app/q:/GIT/vscode.worktrees/perf-fixes-5be74984/out/"
+  },
+  "results": [
+    {
+      "inputBytes": 262144,
+      "algorithm": "production",
+      "medianEncodeMs": 8,
+      "worstEncodeMs": 8.699999988079071,
+      "medianTimerDelayMs": 8.099999994039536,
+      "medianRetainedHeapBytes": 476,
+      "medianRetainedMemoryBytes": 350004,
+      "outputCharacters": 349528,
+      "samples": [
+        {
+          "encodeMs": 8.400000005960464,
+          "outputCharacters": 349528,
+          "timerDelayMs": 8.5,
+          "heapGrowthBeforeGc": 48528,
+          "retainedHeapBytes": 10884,
+          "retainedBackingStorageBytes": 349528,
+          "retainedMemoryBytes": 360412,
+          "heapGrowthAfterRelease": -14216,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 1.5,
+          "outputCharacters": 349528,
+          "timerDelayMs": 1.5999999940395355,
+          "heapGrowthBeforeGc": 24632,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 349528,
+          "retainedMemoryBytes": 349548,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 1.6000000089406967,
+          "outputCharacters": 349528,
+          "timerDelayMs": 1.800000011920929,
+          "heapGrowthBeforeGc": 25100,
+          "retainedHeapBytes": 476,
+          "retainedBackingStorageBytes": 349528,
+          "retainedMemoryBytes": 350004,
+          "heapGrowthAfterRelease": -11468,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 8,
+          "outputCharacters": 349528,
+          "timerDelayMs": 8.099999994039536,
+          "heapGrowthBeforeGc": 34136,
+          "retainedHeapBytes": -103520,
+          "retainedBackingStorageBytes": 217119,
+          "retainedMemoryBytes": 113599,
+          "heapGrowthAfterRelease": -103540,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 8.699999988079071,
+          "outputCharacters": 349528,
+          "timerDelayMs": 8.799999997019768,
+          "heapGrowthBeforeGc": 43652,
+          "retainedHeapBytes": 12028,
+          "retainedBackingStorageBytes": 349528,
+          "retainedMemoryBytes": 361556,
+          "heapGrowthAfterRelease": 12008,
+          "matchesNative": true
+        }
+      ]
+    },
+    {
+      "inputBytes": 262144,
+      "algorithm": "native",
+      "medianEncodeMs": 0.10000000894069672,
+      "worstEncodeMs": 0.20000000298023224,
+      "medianTimerDelayMs": 0.20000000298023224,
+      "medianRetainedHeapBytes": 349540,
+      "medianRetainedMemoryBytes": 349540,
+      "outputCharacters": 349528,
+      "samples": [
+        {
+          "encodeMs": 0.20000000298023224,
+          "outputCharacters": 349528,
+          "timerDelayMs": 0.30000001192092896,
+          "heapGrowthBeforeGc": 369320,
+          "retainedHeapBytes": 344144,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 344144,
+          "heapGrowthAfterRelease": -5396,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.10000000894069672,
+          "outputCharacters": 349528,
+          "timerDelayMs": 0.20000000298023224,
+          "heapGrowthBeforeGc": 369320,
+          "retainedHeapBytes": 349540,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 349540,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.09999999403953552,
+          "outputCharacters": 349528,
+          "timerDelayMs": 0.20000000298023224,
+          "heapGrowthBeforeGc": 369320,
+          "retainedHeapBytes": 349540,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 349540,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.10000000894069672,
+          "outputCharacters": 349528,
+          "timerDelayMs": 0.30000001192092896,
+          "heapGrowthBeforeGc": 369308,
+          "retainedHeapBytes": 349540,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 349540,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.20000000298023224,
+          "outputCharacters": 349528,
+          "timerDelayMs": 0.20000000298023224,
+          "heapGrowthBeforeGc": 369320,
+          "retainedHeapBytes": 349540,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 349540,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        }
+      ]
+    },
+    {
+      "inputBytes": 1048576,
+      "algorithm": "production",
+      "medianEncodeMs": 5.600000008940697,
+      "worstEncodeMs": 5.800000011920929,
+      "medianTimerDelayMs": 5.700000002980232,
+      "medianRetainedHeapBytes": 20,
+      "medianRetainedMemoryBytes": 1398124,
+      "outputCharacters": 1398104,
+      "samples": [
+        {
+          "encodeMs": 5.600000008940697,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 5.700000002980232,
+          "heapGrowthBeforeGc": 19848,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 1398104,
+          "retainedMemoryBytes": 1398124,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 5.800000011920929,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 5.9000000059604645,
+          "heapGrowthBeforeGc": 19848,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 1398104,
+          "retainedMemoryBytes": 1398124,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 5.5999999940395355,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 5.699999988079071,
+          "heapGrowthBeforeGc": 19860,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 1398104,
+          "retainedMemoryBytes": 1398124,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 5.700000002980232,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 5.700000002980232,
+          "heapGrowthBeforeGc": 19860,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 1398104,
+          "retainedMemoryBytes": 1398124,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 5.5,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 5.699999988079071,
+          "heapGrowthBeforeGc": 19848,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 1398104,
+          "retainedMemoryBytes": 1398124,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        }
+      ]
+    },
+    {
+      "inputBytes": 1048576,
+      "algorithm": "native",
+      "medianEncodeMs": 0.29999999701976776,
+      "worstEncodeMs": 0.4000000059604645,
+      "medianTimerDelayMs": 0.5,
+      "medianRetainedHeapBytes": 1398116,
+      "medianRetainedMemoryBytes": 1398116,
+      "outputCharacters": 1398104,
+      "samples": [
+        {
+          "encodeMs": 0.4000000059604645,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 0.4000000059604645,
+          "heapGrowthBeforeGc": 1417896,
+          "retainedHeapBytes": 1398116,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 1398116,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.3999999910593033,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 0.5,
+          "heapGrowthBeforeGc": 1417896,
+          "retainedHeapBytes": 1398116,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 1398116,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.29999999701976776,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 0.5,
+          "heapGrowthBeforeGc": 1417896,
+          "retainedHeapBytes": 1398116,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 1398116,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.29999999701976776,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 0.4000000059604645,
+          "heapGrowthBeforeGc": 1417896,
+          "retainedHeapBytes": 1407772,
+          "retainedBackingStorageBytes": 8,
+          "retainedMemoryBytes": 1407780,
+          "heapGrowthAfterRelease": 1224,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 0.29999999701976776,
+          "outputCharacters": 1398104,
+          "timerDelayMs": 0.5,
+          "heapGrowthBeforeGc": 1417896,
+          "retainedHeapBytes": 1398116,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 1398116,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        }
+      ]
+    },
+    {
+      "inputBytes": 4194304,
+      "algorithm": "production",
+      "medianEncodeMs": 13.599999994039536,
+      "worstEncodeMs": 21.900000005960464,
+      "medianTimerDelayMs": 13.799999997019768,
+      "medianRetainedHeapBytes": 20,
+      "medianRetainedMemoryBytes": 5592428,
+      "outputCharacters": 5592408,
+      "samples": [
+        {
+          "encodeMs": 21.900000005960464,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 22.100000008940697,
+          "heapGrowthBeforeGc": 38512,
+          "retainedHeapBytes": 6544,
+          "retainedBackingStorageBytes": 5592408,
+          "retainedMemoryBytes": 5598952,
+          "heapGrowthAfterRelease": 6884,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 13.799999997019768,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 14,
+          "heapGrowthBeforeGc": 19844,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 5592408,
+          "retainedMemoryBytes": 5592428,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 13.399999991059303,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 13.599999994039536,
+          "heapGrowthBeforeGc": 19844,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 5592408,
+          "retainedMemoryBytes": 5592428,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 13.5,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 13.599999994039536,
+          "heapGrowthBeforeGc": 19844,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 5592408,
+          "retainedMemoryBytes": 5592428,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 13.599999994039536,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 13.799999997019768,
+          "heapGrowthBeforeGc": 19844,
+          "retainedHeapBytes": 20,
+          "retainedBackingStorageBytes": 5592408,
+          "retainedMemoryBytes": 5592428,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        }
+      ]
+    },
+    {
+      "inputBytes": 4194304,
+      "algorithm": "native",
+      "medianEncodeMs": 1.1000000089406967,
+      "worstEncodeMs": 1.2000000029802322,
+      "medianTimerDelayMs": 1.2000000029802322,
+      "medianRetainedHeapBytes": 5592420,
+      "medianRetainedMemoryBytes": 5592420,
+      "outputCharacters": 5592408,
+      "samples": [
+        {
+          "encodeMs": 1.2000000029802322,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 1.2999999970197678,
+          "heapGrowthBeforeGc": 5612184,
+          "retainedHeapBytes": 5592420,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 5592420,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 1.1000000089406967,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 1.2000000029802322,
+          "heapGrowthBeforeGc": 5612184,
+          "retainedHeapBytes": 5592420,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 5592420,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 1,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 1.2000000029802322,
+          "heapGrowthBeforeGc": 5612184,
+          "retainedHeapBytes": 5592420,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 5592420,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 1.2000000029802322,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 1.2000000029802322,
+          "heapGrowthBeforeGc": 5641404,
+          "retainedHeapBytes": 5600060,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 5600060,
+          "heapGrowthAfterRelease": 7640,
+          "matchesNative": true
+        },
+        {
+          "encodeMs": 1.1000000089406967,
+          "outputCharacters": 5592408,
+          "timerDelayMs": 1.2999999970197678,
+          "heapGrowthBeforeGc": 5612172,
+          "retainedHeapBytes": 5592420,
+          "retainedBackingStorageBytes": 0,
+          "retainedMemoryBytes": 5592420,
+          "heapGrowthAfterRelease": 0,
+          "matchesNative": true
+        }
+      ]
+    }
+  ]
+}
