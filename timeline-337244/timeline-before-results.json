@@ -1,0 +1,283 @@
+{
+  "issue": 337244,
+  "checkoutHead": "dcb81648f8a8f1863d2577f8fec98e805e5f95a0",
+  "workingTreeChanges": "",
+  "scope": "Component-level probe in the real renderer; synthetic provider notifications, not a replay of the original session.",
+  "warmupsPerSize": 1,
+  "measuredRunsPerCase": 7,
+  "results": [
+    {
+      "prompts": 100,
+      "noChange": {
+        "medianMs": 1.9000000059604645,
+        "worstMs": 2.2999999970197678,
+        "samples": [
+          {
+            "ms": 1.7999999970197678,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.800000011920929,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.8999999910593033,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 2.2000000029802322,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 2.2999999970197678,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.9000000059604645,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 2,
+            "fileLookups": 100,
+            "emissions": 1
+          }
+        ]
+      },
+      "oneChangedRequest": {
+        "medianMs": 1.7000000029802322,
+        "worstMs": 2.1000000089406967,
+        "samples": [
+          {
+            "ms": 2.1000000089406967,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.7999999970197678,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.5999999940395355,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.7000000029802322,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.7000000029802322,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.7999999970197678,
+            "fileLookups": 100,
+            "emissions": 1
+          },
+          {
+            "ms": 1.5,
+            "fileLookups": 100,
+            "emissions": 1
+          }
+        ]
+      },
+      "unchangedUpdate": {
+        "replacedLabels": 100,
+        "replacedStats": 100,
+        "childListMutations": 700
+      },
+      "renderedRows": 100
+    },
+    {
+      "prompts": 1000,
+      "noChange": {
+        "medianMs": 14.600000008940697,
+        "worstMs": 23.299999997019768,
+        "samples": [
+          {
+            "ms": 16.100000008940697,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 23.299999997019768,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 17.200000002980232,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 14.400000005960464,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 14.600000008940697,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 13.299999997019768,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 12.900000005960464,
+            "fileLookups": 1000,
+            "emissions": 1
+          }
+        ]
+      },
+      "oneChangedRequest": {
+        "medianMs": 14,
+        "worstMs": 15.200000002980232,
+        "samples": [
+          {
+            "ms": 13.399999991059303,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 13.200000002980232,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 14.700000002980232,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 15.200000002980232,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 14.600000008940697,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 14,
+            "fileLookups": 1000,
+            "emissions": 1
+          },
+          {
+            "ms": 13.5,
+            "fileLookups": 1000,
+            "emissions": 1
+          }
+        ]
+      },
+      "unchangedUpdate": {
+        "replacedLabels": 1000,
+        "replacedStats": 1000,
+        "childListMutations": 7000
+      },
+      "renderedRows": 1000
+    },
+    {
+      "prompts": 3000,
+      "noChange": {
+        "medianMs": 48,
+        "worstMs": 56.5,
+        "samples": [
+          {
+            "ms": 48.30000001192093,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 48.900000005960464,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 48,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 46.79999999701977,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 46.6000000089407,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 56.5,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 47.599999994039536,
+            "fileLookups": 3000,
+            "emissions": 1
+          }
+        ]
+      },
+      "oneChangedRequest": {
+        "medianMs": 44.3999999910593,
+        "worstMs": 78.20000000298023,
+        "samples": [
+          {
+            "ms": 78.20000000298023,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 43.599999994039536,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 44.20000000298023,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 44.3999999910593,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 44.5,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 44.3999999910593,
+            "fileLookups": 3000,
+            "emissions": 1
+          },
+          {
+            "ms": 43.20000000298023,
+            "fileLookups": 3000,
+            "emissions": 1
+          }
+        ]
+      },
+      "unchangedUpdate": {
+        "replacedLabels": 3000,
+        "replacedStats": 3000,
+        "childListMutations": 21000
+      },
+      "renderedRows": 3000
+    }
+  ]
+}
