@@ -1,0 +1,171 @@
+[
+  {
+    "pr": 339406,
+    "card": "timeline-proof.png",
+    "recordedRows": [
+      {
+        "label": "Renderer work",
+        "before": 48,
+        "after": 0.09999999403953552,
+        "unit": "ms"
+      },
+      {
+        "label": "Stat subtrees rebuilt",
+        "before": 3000,
+        "after": 0
+      },
+      {
+        "label": "Diff-stat lookups",
+        "before": 3000,
+        "after": 1
+      }
+    ],
+    "chartScale": "Shared across rows with the same unit; pixel-rounded bars, exact numbers labeled.",
+    "note": "The UI should look identical. The improvement is work that no longer happens.",
+    "limit": "Component benchmark with synthetic notifications; not a session-startup measurement.",
+    "sourceFolder": "timeline-337244",
+    "clips": [
+      {
+        "file": "timeline-before-short.gif",
+        "source": "Q:\\GIT\\vscode\\.build\\vscode-playwright-mcp\\evidence\\hunt-337244-timeline-2026-10-02T20-31-09-501Z\\videos\\annotated.mp4",
+        "startSeconds": 22.756,
+        "durationSeconds": 3.2439999999999998,
+        "omittedLeadInSeconds": 22.756,
+        "kind": "measured-result excerpt, not action-latency playback"
+      },
+      {
+        "file": "timeline-after-short.gif",
+        "source": "Q:\\GIT\\vscode.worktrees\\perf-fixes-5be74984\\.build\\vscode-playwright-mcp\\evidence\\hunt-337244-timeline-2026-10-02T20-31-51-532Z\\videos\\annotated.mp4",
+        "startSeconds": 19.167,
+        "durationSeconds": 3.232999999999997,
+        "omittedLeadInSeconds": 19.167,
+        "kind": "measured-result excerpt, not action-latency playback"
+      }
+    ]
+  },
+  {
+    "pr": 339434,
+    "card": "base64-proof.png",
+    "recordedRows": [
+      {
+        "label": "Encoding time",
+        "before": 254.20000000298023,
+        "after": 13.599999994039536,
+        "unit": "ms"
+      },
+      {
+        "label": "Memory while output lives",
+        "before": 106.6664924621582,
+        "after": 5.333354949951172,
+        "unit": "MiB"
+      }
+    ],
+    "chartScale": "Shared across rows with the same unit; pixel-rounded bars, exact numbers labeled.",
+    "note": "One output-sized byte buffer replaces the large chain of per-character strings.",
+    "limit": "Memory includes heap plus backing storage. Encoder probe, not a full plugin-sync test.",
+    "sourceFolder": "base64-334892",
+    "clips": [
+      {
+        "file": "base64-before-short.gif",
+        "source": "Q:\\GIT\\vscode\\.build\\vscode-playwright-mcp\\evidence\\hunt-334892-base64-2026-10-02T23-40-30-944Z\\videos\\annotated.mp4",
+        "startSeconds": 37.677,
+        "durationSeconds": 3.243000000000002,
+        "omittedLeadInSeconds": 37.677,
+        "kind": "measured-result excerpt, not action-latency playback"
+      },
+      {
+        "file": "base64-after-short.gif",
+        "source": "Q:\\GIT\\vscode.worktrees\\perf-fixes-5be74984\\.build\\vscode-playwright-mcp\\evidence\\hunt-334892-base64-2026-10-02T23-41-32-135Z\\videos\\annotated.mp4",
+        "startSeconds": 26.105,
+        "durationSeconds": 3.215,
+        "omittedLeadInSeconds": 26.105,
+        "kind": "measured-result excerpt, not action-latency playback"
+      }
+    ]
+  },
+  {
+    "pr": 339450,
+    "card": "split-proof.png",
+    "recordedRows": [
+      {
+        "label": "Existing-editor layouts",
+        "before": 2,
+        "after": 1
+      },
+      {
+        "label": "Layout-method time",
+        "before": 9.600000008940697,
+        "after": 7.200000002980232,
+        "unit": "ms"
+      }
+    ],
+    "chartScale": "Shared across rows with the same unit; pixel-rounded bars, exact numbers labeled.",
+    "note": "Before 1046.4 then 633. After directly to 633. Final layout is unchanged.",
+    "limit": "Modest measured benefit. This is layout-method time, not total editor-opening time.",
+    "sourceFolder": "splitview-164200",
+    "clips": [
+      {
+        "file": "split-before-short.gif",
+        "source": "Q:\\GIT\\vscode\\.build\\vscode-playwright-mcp\\evidence\\hunt-164200-split-layout-2026-10-03T03-11-23-547Z\\videos\\annotated.mp4",
+        "startSeconds": 31.774,
+        "durationSeconds": 5,
+        "omittedLeadInSeconds": 31.774,
+        "kind": "measured-result excerpt, not action-latency playback"
+      },
+      {
+        "file": "split-after-short.gif",
+        "source": "Q:\\GIT\\vscode.worktrees\\perf-fixes-5be74984\\.build\\vscode-playwright-mcp\\evidence\\hunt-164200-split-layout-2026-10-03T03-12-29-134Z\\videos\\annotated.mp4",
+        "startSeconds": 27.317,
+        "durationSeconds": 4.802999999999997,
+        "omittedLeadInSeconds": 27.317,
+        "kind": "measured-result excerpt, not action-latency playback"
+      }
+    ]
+  },
+  {
+    "pr": 339459,
+    "card": "notebook-proof.png",
+    "recordedRows": [
+      {
+        "label": "41 KB progress batch",
+        "before": 80.59999999403954,
+        "after": 0.5999999940395355,
+        "unit": "ms"
+      },
+      {
+        "label": "82 KB progress batch",
+        "before": 315.80000001192093,
+        "after": 1.0999999940395355,
+        "unit": "ms"
+      },
+      {
+        "label": "164 KB progress batch",
+        "before": 1296.5999999940395,
+        "after": 2.199999988079071,
+        "unit": "ms"
+      }
+    ],
+    "chartScale": "Shared across rows with the same unit; pixel-rounded bars, exact numbers labeled.",
+    "note": "Doubling ordinary progress output no longer quadruples normalization time.",
+    "limit": "Legacy dollar-text lines keep the old path. Component probe, not live-kernel execution.",
+    "sourceFolder": "notebook-stream-normalization",
+    "clips": [
+      {
+        "file": "notebook-before-short.gif",
+        "source": "Q:\\GIT\\vscode\\.build\\vscode-playwright-mcp\\evidence\\high-impact-notebook-stream-2026-10-03T07-04-25-231Z\\videos\\annotated.mp4",
+        "startSeconds": 28.675,
+        "durationSeconds": 3.9250000000000007,
+        "omittedLeadInSeconds": 28.675,
+        "kind": "measured-result excerpt, not action-latency playback"
+      },
+      {
+        "file": "notebook-after-short.gif",
+        "source": "Q:\\GIT\\vscode.worktrees\\perf-fixes-5be74984\\.build\\vscode-playwright-mcp\\evidence\\high-impact-notebook-stream-2026-10-03T07-05-15-832Z\\videos\\annotated.mp4",
+        "startSeconds": 18.085,
+        "durationSeconds": 3.914999999999999,
+        "omittedLeadInSeconds": 18.085,
+        "kind": "measured-result excerpt, not action-latency playback"
+      }
+    ]
+  }
+]
