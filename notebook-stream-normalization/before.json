@@ -1,0 +1,311 @@
+{
+	"kind": "stream",
+	"resultsPath": "C:\\Users\\kanadig\\.copilot\\session-state\\5be74984-e914-4843-8a16-9065f861cc4a\\files\\perf-swarm-high-impact\\editor-notebook\\stream-renderer-1791011064224.json",
+	"checkoutHead": "dcb81648f8a8f1863d2577f8fec98e805e5f95a0",
+	"workingTreeChanges": "",
+	"cases": [
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 16,
+				"carriageReturn": true
+			},
+			"medianMs": 0.10000002384185791,
+			"worstMs": 0.20000001788139343,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.20000001788139343,
+					"frameGapMs": 16.600000000000364,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.10000002384185791,
+					"frameGapMs": 33.400000000001455,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.19999998807907104,
+					"frameGapMs": 33.399999999999636,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 4000,
+				"carriageReturn": false
+			},
+			"medianMs": 0.29999998211860657,
+			"worstMs": 0.30000001192092896,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 0.30000001192092896,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 16.600000000000364,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.29999998211860657,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.19999998807907104,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.29999998211860657,
+					"frameGapMs": 16.600000000000364,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 1000,
+				"carriageReturn": true
+			},
+			"medianMs": 80.59999999403954,
+			"worstMs": 81.40000000596046,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 81.40000000596046,
+					"frameGapMs": 83.39999999999782,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 80.7000000178814,
+					"frameGapMs": 83.40000000000146,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 80.40000000596046,
+					"frameGapMs": 83.29999999999927,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 80.59999999403954,
+					"frameGapMs": 66.70000000000073,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 79.90000000596046,
+					"frameGapMs": 83.29999999999927,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 2000,
+				"carriageReturn": true
+			},
+			"medianMs": 315.80000001192093,
+			"worstMs": 324.89999997615814,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 315.80000001192093,
+					"frameGapMs": 316.7000000000007,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 324.89999997615814,
+					"frameGapMs": 333.3000000000029,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 314.7000000178814,
+					"frameGapMs": 316.7000000000007,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 315.39999997615814,
+					"frameGapMs": 316.7000000000007,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 316.5,
+					"frameGapMs": 316.6000000000022,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 4000,
+				"carriageReturn": true
+			},
+			"medianMs": 1296.5999999940395,
+			"worstMs": 1319.300000011921,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 1282.9000000059605,
+					"frameGapMs": 1283.2999999999993,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1296.5999999940395,
+					"frameGapMs": 1299.9000000000015,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1285.4000000059605,
+					"frameGapMs": 1299.9000000000015,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1315.800000011921,
+					"frameGapMs": 1316.5,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1319.300000011921,
+					"frameGapMs": 1316.5999999999985,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		}
+	],
+	"environment": {
+		"root": "vscode-file://vscode-app/q:/GIT/vscode/out/",
+		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) code-oss-dev/1.141.0 Chrome/150.0.7871.250 Electron/43.7.5 Safari/537.36",
+		"productionClasses": [
+			"NotebookCellOutputTextModel",
+			"NotebookCellTextModel",
+			"NotebookWorker"
+		],
+		"adapters": "Synthetic notebook DTOs and two-cell containers; unused language service and trace-only logger. Real NotebookWorker run locally only for setup/alignment, excluded from syncMs. Real renderer computeDiff and models are unmodified.",
+		"bounds": {
+			"maximumDataBytes": 8388608,
+			"perSampleTimeoutMs": 8000
+		}
+	},
+	"expected": {
+		"maximumMedianRendererStallMs": 200,
+		"equivalentControlMaximumMs": 50
+	},
+	"actual": {
+		"medianMs": 1296.5999999940395,
+		"worstMs": 1319.300000011921,
+		"ratioToControl": 4322.000257591422
+	}
+}

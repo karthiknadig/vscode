@@ -1,0 +1,311 @@
+{
+	"kind": "stream",
+	"resultsPath": "C:\\Users\\kanadig\\.copilot\\session-state\\5be74984-e914-4843-8a16-9065f861cc4a\\files\\perf-swarm-high-impact\\editor-notebook\\stream-renderer-1791011115543.json",
+	"checkoutHead": "709ff28acde959947531c9aa8ac16ced1ba9b663",
+	"workingTreeChanges": "",
+	"cases": [
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 16,
+				"carriageReturn": true
+			},
+			"medianMs": 0.09999999403953552,
+			"worstMs": 0.19999998807907104,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 16.601999999998952,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 16.600000000000364,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.10000002384185791,
+					"frameGapMs": 16.700000000000728,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 33.30000000000109,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.19999998807907104,
+					"frameGapMs": 33.30000000000109,
+					"inputBytes": 656,
+					"outputBytes": 346,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 4000,
+				"carriageReturn": false
+			},
+			"medianMs": 0.19999998807907104,
+			"worstMs": 0.30000001192092896,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 33.30000000000109,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.30000001192092896,
+					"frameGapMs": 16.700000000000728,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.19999998807907104,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.09999999403953552,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.19999998807907104,
+					"frameGapMs": 16.69999999999891,
+					"inputBytes": 84000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 1000,
+				"carriageReturn": true
+			},
+			"medianMs": 0.5999999940395355,
+			"worstMs": 0.5999999940395355,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 0.5,
+					"frameGapMs": 33.39999999999782,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.5999999940395355,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.5999999940395355,
+					"frameGapMs": 16.69999999999709,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.5999999940395355,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.5,
+					"frameGapMs": 33.39999999999782,
+					"inputBytes": 41000,
+					"outputBytes": 21010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 2000,
+				"carriageReturn": true
+			},
+			"medianMs": 1.0999999940395355,
+			"worstMs": 1.0999999940395355,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 1.0999999940395355,
+					"frameGapMs": 33.30000000000291,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1.0999999940395355,
+					"frameGapMs": 16.799999999999272,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1.0999999940395355,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 1.0999999940395355,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 0.9000000059604645,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 82000,
+					"outputBytes": 42010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		},
+		{
+			"specification": {
+				"kind": "stream",
+				"lines": 4000,
+				"carriageReturn": true
+			},
+			"medianMs": 2.199999988079071,
+			"worstMs": 2.4000000059604645,
+			"samples": [
+				{
+					"correct": true,
+					"syncMs": 1.800000011920929,
+					"frameGapMs": 16.700000000000728,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 2.199999988079071,
+					"frameGapMs": 16.700000000000728,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 2.4000000059604645,
+					"frameGapMs": 33.30000000000291,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 2.199999988079071,
+					"frameGapMs": 33.29999999999927,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				},
+				{
+					"correct": true,
+					"syncMs": 2.4000000059604645,
+					"frameGapMs": 33.400000000001455,
+					"inputBytes": 164000,
+					"outputBytes": 84010,
+					"version": 1,
+					"events": 1
+				}
+			]
+		}
+	],
+	"environment": {
+		"root": "vscode-file://vscode-app/q:/GIT/vscode.worktrees/perf-fixes-5be74984/out/",
+		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) code-oss-dev/1.141.0 Chrome/150.0.7871.250 Electron/43.7.5 Safari/537.36",
+		"productionClasses": [
+			"NotebookCellOutputTextModel",
+			"_NotebookCellTextModel",
+			"NotebookWorker"
+		],
+		"adapters": "Synthetic notebook DTOs and two-cell containers; unused language service and trace-only logger. Real NotebookWorker run locally only for setup/alignment, excluded from syncMs. Real renderer computeDiff and models are unmodified.",
+		"bounds": {
+			"maximumDataBytes": 8388608,
+			"perSampleTimeoutMs": 8000
+		}
+	},
+	"expected": {
+		"maximumMedianRendererStallMs": 200,
+		"equivalentControlMaximumMs": 50
+	},
+	"actual": {
+		"medianMs": 2.199999988079071,
+		"worstMs": 2.4000000059604645,
+		"ratioToControl": 11.000000596046483
+	}
+}
