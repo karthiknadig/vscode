@@ -1,0 +1,128 @@
+{
+  "issue": 164200,
+  "checkoutHead": "db9875999c86fbb79cad77e86988fe62882f832f",
+  "workingTreeChanges": "",
+  "scope": "Real split-editor commands with forwarding instrumentation on CodeEditorWidget.layout, plus a direct SplitView control using synthetic views.",
+  "warmups": 1,
+  "measuredSplits": 5,
+  "samples": [
+    {
+      "iteration": 1,
+      "beforeWidth": 1266,
+      "calls": [
+        {
+          "width": 633,
+          "height": 956.4,
+          "durationMs": 8.5,
+          "postponeRendering": false
+        }
+      ],
+      "finalWidth": 633
+    },
+    {
+      "iteration": 2,
+      "beforeWidth": 1266,
+      "calls": [
+        {
+          "width": 633,
+          "height": 956.4,
+          "durationMs": 7.5999999940395355,
+          "postponeRendering": false
+        }
+      ],
+      "finalWidth": 633
+    },
+    {
+      "iteration": 3,
+      "beforeWidth": 1266,
+      "calls": [
+        {
+          "width": 633,
+          "height": 956.4,
+          "durationMs": 7.100000008940697,
+          "postponeRendering": false
+        }
+      ],
+      "finalWidth": 633
+    },
+    {
+      "iteration": 4,
+      "beforeWidth": 1266,
+      "calls": [
+        {
+          "width": 633,
+          "height": 956.4,
+          "durationMs": 7.200000002980232,
+          "postponeRendering": false
+        }
+      ],
+      "finalWidth": 633
+    },
+    {
+      "iteration": 5,
+      "beforeWidth": 1266,
+      "calls": [
+        {
+          "width": 633,
+          "height": 956.4,
+          "durationMs": 7.0999999940395355,
+          "postponeRendering": false
+        }
+      ],
+      "finalWidth": 633
+    }
+  ],
+  "componentResults": [
+    {
+      "kind": "auto",
+      "calls": [
+        {
+          "name": "first",
+          "size": 600
+        },
+        {
+          "name": "second",
+          "size": 600
+        }
+      ],
+      "finalSizes": [
+        600,
+        600
+      ]
+    },
+    {
+      "kind": "distribute",
+      "calls": [
+        {
+          "name": "first",
+          "size": 600
+        },
+        {
+          "name": "second",
+          "size": 600
+        }
+      ],
+      "finalSizes": [
+        600,
+        600
+      ]
+    },
+    {
+      "kind": "split",
+      "calls": [
+        {
+          "name": "first",
+          "size": 600
+        },
+        {
+          "name": "second",
+          "size": 600
+        }
+      ],
+      "finalSizes": [
+        600,
+        600
+      ]
+    }
+  ]
+}
