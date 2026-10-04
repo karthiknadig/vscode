@@ -1,0 +1,2 @@
+Disposable workspace for the terminal/task backend lifetime hunt.
+No external programs or model prompts are executed by this fixture.

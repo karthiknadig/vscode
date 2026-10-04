@@ -1,0 +1,26 @@
+{
+	"name": "terminal-task-lifetime-probe",
+	"publisher": "local-performance-fixture",
+	"version": "0.0.1",
+	"engines": { "vscode": "^1.80.0" },
+	"main": "./extension.cjs",
+	"activationEvents": ["onCommand:terminalTaskPerf.baseline", "onCommand:terminalTaskPerf.measure"],
+	"contributes": {
+		"commands": [
+			{ "command": "terminalTaskPerf.baseline", "title": "Terminal Task Perf: Baseline" },
+			{ "command": "terminalTaskPerf.measure", "title": "Terminal Task Perf: Measure" }
+		],
+		"taskDefinitions": [{
+			"type": "terminalLifetimeProbe",
+			"required": ["cycle"],
+			"properties": { "cycle": { "type": "string" } }
+		}],
+		"configuration": {
+			"title": "Local Terminal Task Lifetime Fixture",
+			"properties": {
+				"terminalTaskPerf.runId": { "type": "string", "default": "" },
+				"terminalTaskPerf.captureHeap": { "type": "boolean", "default": false }
+			}
+		}
+	}
+}

@@ -1,0 +1,1706 @@
+{
+  "issue": "https://github.com/microsoft/vscode/issues/339537",
+  "baseCommit": "0817aaa824590067854c361e77eb973a08b3cf48",
+  "fixedCommit": "4ff52438d46919c520e7effa4647ae78ecfbdf26",
+  "fixtureHashes": {
+    "task-provider-retention.cjs": "164fef5b7dafa914bcb9bb4c93ef5fb0f858cb89734b391f0c54d7fd4d93900c",
+    "extension\\extension.cjs": "129fce11548ce4001c17ba96b4c93ce37b77ff26327b1a0c9e2437cbb34a4959",
+    "extension\\package.json": "b8c07b003eb1e54c41bb9d0968961d5013f67840e6cac554a7f165236e9db4aa",
+    "workspace\\fixture.txt": "8bbfb166af5c91da566166555a0f4b69a94599bc4f34e14ee733499475edd544"
+  },
+  "fixtureTextSha256LF": {
+    "task-provider-retention.cjs": "cc5e360acfd8082c20ad16b6a101943e76b5e46068ea266bffcf916a6ae05fdd",
+    "extension\\extension.cjs": "e69c71588ddfcc8d1b585bfc339321f6f5b936631a28423605db247a0d605bd9",
+    "extension\\package.json": "4fb9784ee2e8bca98f6fcf1ef03ccec241a69ec14aa8c875cc1ce72ed5f7c895",
+    "workspace\\fixture.txt": "cec7a88f634a4eb6ae50323720e9013d1c37298ebe8b4af4b999ab4e55e0fe7b"
+  },
+  "publishedTextLineEndings": "Git normalizes text to LF; fixtureTextSha256LF identifies the published inputs. fixtureHashes records the exact unchanged bytes used on both sides.",
+  "measurement": {
+    "scope": "Successful custom-task discovery through the real vscode.tasks API; task callbacks are never executed in the memory probe.",
+    "platform": "Windows x64 / Code OSS 1.141.0 Dev",
+    "harnessNode": "v24.20.0",
+    "windowsPerSide": 3,
+    "warmupsPerArm": 1,
+    "measuredCyclesPerArm": 5,
+    "syntheticCallbackPayloadBytes": 2097152,
+    "arms": [
+      "No discovery",
+      "Same-ID discovery",
+      "Distinct-ID discovery"
+    ],
+    "gc": "Two inspector HeapProfiler.collectGarbage calls at each quiescent boundary, separated by setImmediate.",
+    "releaseThresholdBytes": 1048576,
+    "signals": [
+      "process.memoryUsage().external",
+      "WeakRef-observed live Buffer count and byteLength"
+    ],
+    "arrayBuffersCounter": "Zero in this Electron runtime; explicitly NOT used as evidence.",
+    "time": "elapsedMs includes GC and is not a latency benchmark.",
+    "limits": "2 MiB is a synthetic measurement payload, not a typical task size or user-frequency estimate. Growth is relative to each arm warmup.",
+    "installedComparison": "Unverified. Shared Insiders has a pending update; the installation and startup guard were left untouched.",
+    "unchangedFixture": true,
+    "allEmptyDiscoveryAssertionsPassed": true,
+    "allMeasuredSamplesHaveZeroActiveTasksAndTerminals": true
+  },
+  "nativeOwnershipProof": {
+    "build": "dcb81648f8a8f1863d2577f8fec98e805e5f95a0",
+    "note": "Existing hunter snapshot; affected product source is unchanged at the fresh baseline. No new snapshot was needed for the repeated fixed runs.",
+    "path": [
+      "ExtHostTask",
+      "_providedCustomExecutions2",
+      "Map table",
+      "CustomExecution",
+      "callback closure",
+      "Buffer",
+      "ArrayBuffer",
+      "native JSArrayBufferData"
+    ],
+    "cachedCustomExecutions": 8,
+    "nativeBackingBytes": 14680064,
+    "explanation": "Seven 2 MiB backing stores include warmups and the same-ID control; the additional tiny baseline callback has zero reported native self size."
+  },
+  "sourceHashes": {
+    "before": [
+      {
+        "path": "src\\vs\\workbench\\api\\common\\extHostTask.ts",
+        "sha256": "7aed9d5c81ac235250853a4668a37512eb2346fd23b4ab683138b5e0d301df6e"
+      },
+      {
+        "path": "src\\vs\\workbench\\api\\node\\extHostTask.ts",
+        "sha256": "8aca88007cea6dacc5b35ad0f5e9bb51e445b2b4c9495857de67259042274ef8"
+      },
+      {
+        "path": "out\\vs\\workbench\\api\\common\\extHostTask.js",
+        "sha256": "0b766c7fc2371f588d5344f9704fde08a5f7ca2fe41ddeb23879e2a40e86f2db"
+      },
+      {
+        "path": "out\\vs\\workbench\\api\\node\\extHostTask.js",
+        "sha256": "7a9e29cc5854de3c8099a0afd5d210e5bf5ae6076658a4291fce7bcd840dac06"
+      }
+    ],
+    "after": [
+      {
+        "path": "src\\vs\\workbench\\api\\common\\extHostTask.ts",
+        "sha256": "382912f9200c48527a435296940137b58dcc086b1a77e6ed48ea19507e242116"
+      },
+      {
+        "path": "src\\vs\\workbench\\api\\node\\extHostTask.ts",
+        "sha256": "1a2ac29178e54545017a32381fee9a1d9d91cc09d030edd05006a66c161136d3"
+      },
+      {
+        "path": "out\\vs\\workbench\\api\\common\\extHostTask.js",
+        "sha256": "5e26a8734bb56cd6480585e94a3985e8e26f4b8496a15281c308804b519acf05"
+      },
+      {
+        "path": "out\\vs\\workbench\\api\\node\\extHostTask.js",
+        "sha256": "0cb32f3a5732443f2923ba37da0bca6db426955b2fa10f9be21bfa373caca161"
+      }
+    ]
+  },
+  "before": [
+    {
+      "window": 1,
+      "outcome": "failed",
+      "version": "1.141.0",
+      "node": "v24.21.0",
+      "input": {
+        "payloadBytes": 2097152,
+        "samples": 5,
+        "warmup": 1,
+        "fixture": "CustomExecution captures one 2 MiB Buffer; tasks are never executed"
+      },
+      "control": [
+        {
+          "cycle": 0,
+          "elapsedMs": 57.53759999999966,
+          "rss": 167723008,
+          "heapTotal": 52989952,
+          "heapUsed": 50411420,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 65.54899999999998,
+          "rss": 167723008,
+          "heapTotal": 52989952,
+          "heapUsed": 50421768,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 54.68039999999928,
+          "rss": 167739392,
+          "heapTotal": 52989952,
+          "heapUsed": 50434320,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 50.222899999999754,
+          "rss": 167825408,
+          "heapTotal": 52989952,
+          "heapUsed": 50459048,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 49.71379999999954,
+          "rss": 167825408,
+          "heapTotal": 52989952,
+          "heapUsed": 50467564,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "reusedId": [
+        {
+          "cycle": 0,
+          "elapsedMs": 54.1235999999999,
+          "rss": 171892736,
+          "heapTotal": 52989952,
+          "heapUsed": 50494652,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 54.27679999999964,
+          "rss": 169992192,
+          "heapTotal": 52989952,
+          "heapUsed": 50498672,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 53.14060000000063,
+          "rss": 171892736,
+          "heapTotal": 52989952,
+          "heapUsed": 50515540,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 51.875200000000405,
+          "rss": 169992192,
+          "heapTotal": 52989952,
+          "heapUsed": 50516140,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 52.10559999999987,
+          "rss": 171892736,
+          "heapTotal": 52989952,
+          "heapUsed": 50517148,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "fetched": [
+        {
+          "cycle": 0,
+          "elapsedMs": 52.55879999999979,
+          "rss": 174120960,
+          "heapTotal": 52989952,
+          "heapUsed": 50530704,
+          "external": 11061074,
+          "arrayBuffers": 0,
+          "livePayloads": 4,
+          "livePayloadBytes": 6291457,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 53.79600000000028,
+          "rss": 176283648,
+          "heapTotal": 52989952,
+          "heapUsed": 50531916,
+          "external": 13158226,
+          "arrayBuffers": 0,
+          "livePayloads": 5,
+          "livePayloadBytes": 8388609,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 52.439400000000205,
+          "rss": 178446336,
+          "heapTotal": 52989952,
+          "heapUsed": 50534776,
+          "external": 15255378,
+          "arrayBuffers": 0,
+          "livePayloads": 6,
+          "livePayloadBytes": 10485761,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 55.051400000000285,
+          "rss": 180609024,
+          "heapTotal": 52989952,
+          "heapUsed": 50535344,
+          "external": 17352530,
+          "arrayBuffers": 0,
+          "livePayloads": 7,
+          "livePayloadBytes": 12582913,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 52.60599999999977,
+          "rss": 182771712,
+          "heapTotal": 52989952,
+          "heapUsed": 50535808,
+          "external": 19449682,
+          "arrayBuffers": 0,
+          "livePayloads": 8,
+          "livePayloadBytes": 14680065,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "controlBaseline": {
+        "rss": 167718912,
+        "heapTotal": 52989952,
+        "heapUsed": 50410328,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 1,
+        "livePayloadBytes": 1,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "reusedIdBaseline": {
+        "rss": 169730048,
+        "heapTotal": 52989952,
+        "heapUsed": 50478600,
+        "external": 6866770,
+        "arrayBuffers": 0,
+        "livePayloads": 2,
+        "livePayloadBytes": 2097153,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "fetchedBaseline": {
+        "rss": 171958272,
+        "heapTotal": 52989952,
+        "heapUsed": 50517704,
+        "external": 8963922,
+        "arrayBuffers": 0,
+        "livePayloads": 3,
+        "livePayloadBytes": 4194305,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "controlDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 57236,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "reusedIdDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 38548,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "fetchedDelta": {
+        "arrayBuffers": 0,
+        "external": 10485760,
+        "heapUsed": 18104,
+        "livePayloads": 5,
+        "livePayloadBytes": 10485760
+      }
+    },
+    {
+      "window": 2,
+      "outcome": "failed",
+      "version": "1.141.0",
+      "node": "v24.21.0",
+      "input": {
+        "payloadBytes": 2097152,
+        "samples": 5,
+        "warmup": 1,
+        "fixture": "CustomExecution captures one 2 MiB Buffer; tasks are never executed"
+      },
+      "control": [
+        {
+          "cycle": 0,
+          "elapsedMs": 53.649600000000646,
+          "rss": 167976960,
+          "heapTotal": 52989952,
+          "heapUsed": 50472480,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 53.82259999999951,
+          "rss": 167976960,
+          "heapTotal": 52989952,
+          "heapUsed": 50479968,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 53.69750000000022,
+          "rss": 167989248,
+          "heapTotal": 52989952,
+          "heapUsed": 50492520,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 51.879000000000815,
+          "rss": 168009728,
+          "heapTotal": 52989952,
+          "heapUsed": 50517248,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 51.28220000000056,
+          "rss": 168009728,
+          "heapTotal": 52989952,
+          "heapUsed": 50525764,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "reusedId": [
+        {
+          "cycle": 0,
+          "elapsedMs": 54.030799999999545,
+          "rss": 171945984,
+          "heapTotal": 52989952,
+          "heapUsed": 50551908,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 53.51920000000064,
+          "rss": 170176512,
+          "heapTotal": 52989952,
+          "heapUsed": 50552800,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 53.59220000000005,
+          "rss": 171945984,
+          "heapTotal": 52989952,
+          "heapUsed": 50571384,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 53.97110000000066,
+          "rss": 170176512,
+          "heapTotal": 52989952,
+          "heapUsed": 50571984,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 55.30549999999948,
+          "rss": 171945984,
+          "heapTotal": 52989952,
+          "heapUsed": 50572992,
+          "external": 6866770,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "fetched": [
+        {
+          "cycle": 0,
+          "elapsedMs": 55.82960000000003,
+          "rss": 174174208,
+          "heapTotal": 52989952,
+          "heapUsed": 50586548,
+          "external": 11061074,
+          "arrayBuffers": 0,
+          "livePayloads": 4,
+          "livePayloadBytes": 6291457,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 60.790899999999965,
+          "rss": 176336896,
+          "heapTotal": 52989952,
+          "heapUsed": 50587760,
+          "external": 13158226,
+          "arrayBuffers": 0,
+          "livePayloads": 5,
+          "livePayloadBytes": 8388609,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 56.954499999999825,
+          "rss": 178499584,
+          "heapTotal": 52989952,
+          "heapUsed": 50590620,
+          "external": 15255378,
+          "arrayBuffers": 0,
+          "livePayloads": 6,
+          "livePayloadBytes": 10485761,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 55.48329999999987,
+          "rss": 180666368,
+          "heapTotal": 52989952,
+          "heapUsed": 50591188,
+          "external": 17352530,
+          "arrayBuffers": 0,
+          "livePayloads": 7,
+          "livePayloadBytes": 12582913,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 58.149500000000444,
+          "rss": 182398976,
+          "heapTotal": 52989952,
+          "heapUsed": 50596504,
+          "external": 19449682,
+          "arrayBuffers": 0,
+          "livePayloads": 8,
+          "livePayloadBytes": 14680065,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "controlBaseline": {
+        "rss": 167976960,
+        "heapTotal": 52989952,
+        "heapUsed": 50471244,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 1,
+        "livePayloadBytes": 1,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "reusedIdBaseline": {
+        "rss": 169783296,
+        "heapTotal": 52989952,
+        "heapUsed": 50535856,
+        "external": 6866770,
+        "arrayBuffers": 0,
+        "livePayloads": 2,
+        "livePayloadBytes": 2097153,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "fetchedBaseline": {
+        "rss": 172011520,
+        "heapTotal": 52989952,
+        "heapUsed": 50573548,
+        "external": 8963922,
+        "arrayBuffers": 0,
+        "livePayloads": 3,
+        "livePayloadBytes": 4194305,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "controlDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 54520,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "reusedIdDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 37136,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "fetchedDelta": {
+        "arrayBuffers": 0,
+        "external": 10485760,
+        "heapUsed": 22956,
+        "livePayloads": 5,
+        "livePayloadBytes": 10485760
+      }
+    },
+    {
+      "window": 3,
+      "outcome": "failed",
+      "version": "1.141.0",
+      "node": "v24.21.0",
+      "input": {
+        "payloadBytes": 2097152,
+        "samples": 5,
+        "warmup": 1,
+        "fixture": "CustomExecution captures one 2 MiB Buffer; tasks are never executed"
+      },
+      "control": [
+        {
+          "cycle": 0,
+          "elapsedMs": 312.82600000000093,
+          "rss": 525103104,
+          "heapTotal": 369958912,
+          "heapUsed": 368416776,
+          "external": 8226031,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 335.7026999999998,
+          "rss": 527130624,
+          "heapTotal": 369958912,
+          "heapUsed": 368486728,
+          "external": 8226031,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 325.6399000000001,
+          "rss": 525582336,
+          "heapTotal": 369958912,
+          "heapUsed": 368501340,
+          "external": 8226031,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 325.39999999999964,
+          "rss": 525414400,
+          "heapTotal": 369958912,
+          "heapUsed": 368525956,
+          "external": 8226031,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 310.0663999999997,
+          "rss": 527826944,
+          "heapTotal": 369958912,
+          "heapUsed": 368532212,
+          "external": 8226031,
+          "arrayBuffers": 0,
+          "livePayloads": 1,
+          "livePayloadBytes": 1,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "reusedId": [
+        {
+          "cycle": 0,
+          "elapsedMs": 305.85230000000047,
+          "rss": 531349504,
+          "heapTotal": 369958912,
+          "heapUsed": 368555612,
+          "external": 10323183,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 297.46819999999934,
+          "rss": 529526784,
+          "heapTotal": 369958912,
+          "heapUsed": 368556504,
+          "external": 10323183,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 317.0049000000017,
+          "rss": 529780736,
+          "heapTotal": 369958912,
+          "heapUsed": 368572144,
+          "external": 10323183,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 293.78029999999853,
+          "rss": 528195584,
+          "heapTotal": 369958912,
+          "heapUsed": 368572628,
+          "external": 10323183,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 280.4935000000005,
+          "rss": 529022976,
+          "heapTotal": 369958912,
+          "heapUsed": 368573912,
+          "external": 10323183,
+          "arrayBuffers": 0,
+          "livePayloads": 2,
+          "livePayloadBytes": 2097153,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "fetched": [
+        {
+          "cycle": 0,
+          "elapsedMs": 286.85419999999976,
+          "rss": 532156416,
+          "heapTotal": 369958912,
+          "heapUsed": 368584916,
+          "external": 14517487,
+          "arrayBuffers": 0,
+          "livePayloads": 4,
+          "livePayloadBytes": 6291457,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 270.6251999999986,
+          "rss": 535396352,
+          "heapTotal": 369958912,
+          "heapUsed": 368586128,
+          "external": 16614639,
+          "arrayBuffers": 0,
+          "livePayloads": 5,
+          "livePayloadBytes": 8388609,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 272.5697,
+          "rss": 536231936,
+          "heapTotal": 369958912,
+          "heapUsed": 368588620,
+          "external": 18711791,
+          "arrayBuffers": 0,
+          "livePayloads": 6,
+          "livePayloadBytes": 10485761,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 270.1375000000007,
+          "rss": 539467776,
+          "heapTotal": 369958912,
+          "heapUsed": 368589188,
+          "external": 20808943,
+          "arrayBuffers": 0,
+          "livePayloads": 7,
+          "livePayloadBytes": 12582913,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 276.6258999999991,
+          "rss": 541978624,
+          "heapTotal": 369958912,
+          "heapUsed": 368589652,
+          "external": 22906095,
+          "arrayBuffers": 0,
+          "livePayloads": 8,
+          "livePayloadBytes": 14680065,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "controlBaseline": {
+        "rss": 525197312,
+        "heapTotal": 369696768,
+        "heapUsed": 368116344,
+        "external": 8226031,
+        "arrayBuffers": 0,
+        "livePayloads": 1,
+        "livePayloadBytes": 1,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "reusedIdBaseline": {
+        "rss": 527376384,
+        "heapTotal": 369958912,
+        "heapUsed": 368539560,
+        "external": 10323183,
+        "arrayBuffers": 0,
+        "livePayloads": 2,
+        "livePayloadBytes": 2097153,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "fetchedBaseline": {
+        "rss": 528535552,
+        "heapTotal": 369958912,
+        "heapUsed": 368573040,
+        "external": 12420335,
+        "arrayBuffers": 0,
+        "livePayloads": 3,
+        "livePayloadBytes": 4194305,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "controlDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 415868,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "reusedIdDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 34352,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "fetchedDelta": {
+        "arrayBuffers": 0,
+        "external": 10485760,
+        "heapUsed": 16612,
+        "livePayloads": 5,
+        "livePayloadBytes": 10485760
+      }
+    }
+  ],
+  "after": [
+    {
+      "window": 1,
+      "outcome": "passed",
+      "version": "1.141.0",
+      "node": "v24.21.0",
+      "input": {
+        "payloadBytes": 2097152,
+        "samples": 5,
+        "warmup": 1,
+        "fixture": "CustomExecution captures one 2 MiB Buffer; tasks are never executed"
+      },
+      "control": [
+        {
+          "cycle": 0,
+          "elapsedMs": 57.29280000000017,
+          "rss": 198619136,
+          "heapTotal": 80482304,
+          "heapUsed": 77746640,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 58.20769999999993,
+          "rss": 198631424,
+          "heapTotal": 80482304,
+          "heapUsed": 77756572,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 56.998899999999594,
+          "rss": 198631424,
+          "heapTotal": 80482304,
+          "heapUsed": 77769124,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 53.95480000000043,
+          "rss": 198656000,
+          "heapTotal": 80482304,
+          "heapUsed": 77793868,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 55.162600000000566,
+          "rss": 198656000,
+          "heapTotal": 80482304,
+          "heapUsed": 77802416,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "reusedId": [
+        {
+          "cycle": 0,
+          "elapsedMs": 56.805599999999686,
+          "rss": 198664192,
+          "heapTotal": 80482304,
+          "heapUsed": 77825664,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 57.83399999999983,
+          "rss": 198664192,
+          "heapTotal": 80482304,
+          "heapUsed": 77836352,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 58.75969999999961,
+          "rss": 198664192,
+          "heapTotal": 80482304,
+          "heapUsed": 77848876,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 56.440599999999904,
+          "rss": 198664192,
+          "heapTotal": 80482304,
+          "heapUsed": 77849476,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 56.66229999999996,
+          "rss": 198664192,
+          "heapTotal": 80482304,
+          "heapUsed": 77850492,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "fetched": [
+        {
+          "cycle": 0,
+          "elapsedMs": 55.85429999999997,
+          "rss": 198729728,
+          "heapTotal": 80482304,
+          "heapUsed": 77872980,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 56.46969999999965,
+          "rss": 198729728,
+          "heapTotal": 80482304,
+          "heapUsed": 77873844,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 56.448599999999715,
+          "rss": 198729728,
+          "heapTotal": 80482304,
+          "heapUsed": 77876472,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 58.98539999999957,
+          "rss": 198729728,
+          "heapTotal": 80482304,
+          "heapUsed": 77876752,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 57.876500000000306,
+          "rss": 198729728,
+          "heapTotal": 80482304,
+          "heapUsed": 77877044,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "controlBaseline": {
+        "rss": 198553600,
+        "heapTotal": 80482304,
+        "heapUsed": 77745464,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "reusedIdBaseline": {
+        "rss": 198660096,
+        "heapTotal": 80482304,
+        "heapUsed": 77809408,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "fetchedBaseline": {
+        "rss": 198664192,
+        "heapTotal": 80482304,
+        "heapUsed": 77850756,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "controlDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 56952,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "reusedIdDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 41084,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "fetchedDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 26288,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      }
+    },
+    {
+      "window": 2,
+      "outcome": "passed",
+      "version": "1.141.0",
+      "node": "v24.21.0",
+      "input": {
+        "payloadBytes": 2097152,
+        "samples": 5,
+        "warmup": 1,
+        "fixture": "CustomExecution captures one 2 MiB Buffer; tasks are never executed"
+      },
+      "control": [
+        {
+          "cycle": 0,
+          "elapsedMs": 75.78099999999995,
+          "rss": 196997120,
+          "heapTotal": 79695872,
+          "heapUsed": 77747660,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 63.76959999999963,
+          "rss": 197001216,
+          "heapTotal": 79695872,
+          "heapUsed": 77755172,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 59.474600000000464,
+          "rss": 197005312,
+          "heapTotal": 79695872,
+          "heapUsed": 77767724,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 64.6847000000007,
+          "rss": 197050368,
+          "heapTotal": 79695872,
+          "heapUsed": 77792468,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 68.45629999999983,
+          "rss": 197070848,
+          "heapTotal": 79695872,
+          "heapUsed": 77801016,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "reusedId": [
+        {
+          "cycle": 0,
+          "elapsedMs": 62.62259999999969,
+          "rss": 197074944,
+          "heapTotal": 79695872,
+          "heapUsed": 77824264,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 62.88100000000031,
+          "rss": 197079040,
+          "heapTotal": 79695872,
+          "heapUsed": 77834476,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 64.85450000000037,
+          "rss": 197079040,
+          "heapTotal": 79695872,
+          "heapUsed": 77847000,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 62.83550000000014,
+          "rss": 197079040,
+          "heapTotal": 79695872,
+          "heapUsed": 77847600,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 67.53700000000026,
+          "rss": 197079040,
+          "heapTotal": 79695872,
+          "heapUsed": 77848616,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "fetched": [
+        {
+          "cycle": 0,
+          "elapsedMs": 65.05609999999979,
+          "rss": 197144576,
+          "heapTotal": 79695872,
+          "heapUsed": 77871104,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 62.12299999999959,
+          "rss": 197144576,
+          "heapTotal": 79695872,
+          "heapUsed": 77873684,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 69.63040000000001,
+          "rss": 197144576,
+          "heapTotal": 79695872,
+          "heapUsed": 77876428,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 69.28809999999976,
+          "rss": 197144576,
+          "heapTotal": 79695872,
+          "heapUsed": 77876708,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 58.770800000000236,
+          "rss": 197144576,
+          "heapTotal": 79695872,
+          "heapUsed": 77876884,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "controlBaseline": {
+        "rss": 196804608,
+        "heapTotal": 79695872,
+        "heapUsed": 77746416,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "reusedIdBaseline": {
+        "rss": 197074944,
+        "heapTotal": 79695872,
+        "heapUsed": 77808008,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "fetchedBaseline": {
+        "rss": 197144576,
+        "heapTotal": 79695872,
+        "heapUsed": 77848880,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "controlDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 54600,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "reusedIdDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 40608,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "fetchedDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 28004,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      }
+    },
+    {
+      "window": 3,
+      "outcome": "passed",
+      "version": "1.141.0",
+      "node": "v24.21.0",
+      "input": {
+        "payloadBytes": 2097152,
+        "samples": 5,
+        "warmup": 1,
+        "fixture": "CustomExecution captures one 2 MiB Buffer; tasks are never executed"
+      },
+      "control": [
+        {
+          "cycle": 0,
+          "elapsedMs": 65.52790000000005,
+          "rss": 202649600,
+          "heapTotal": 79958016,
+          "heapUsed": 77742460,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 60.81779999999981,
+          "rss": 202649600,
+          "heapTotal": 79958016,
+          "heapUsed": 77749496,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 58.78989999999976,
+          "rss": 202665984,
+          "heapTotal": 79958016,
+          "heapUsed": 77762592,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 59.297999999999774,
+          "rss": 202706944,
+          "heapTotal": 79958016,
+          "heapUsed": 77787352,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 59.022899999999936,
+          "rss": 202743808,
+          "heapTotal": 79958016,
+          "heapUsed": 77795900,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "reusedId": [
+        {
+          "cycle": 0,
+          "elapsedMs": 68.94650000000001,
+          "rss": 202772480,
+          "heapTotal": 79958016,
+          "heapUsed": 77819008,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 63.40740000000005,
+          "rss": 202772480,
+          "heapTotal": 79958016,
+          "heapUsed": 77829732,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 63.39719999999943,
+          "rss": 202772480,
+          "heapTotal": 79958016,
+          "heapUsed": 77842256,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 70.2521999999999,
+          "rss": 202776576,
+          "heapTotal": 79958016,
+          "heapUsed": 77842856,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 65.36710000000039,
+          "rss": 202809344,
+          "heapTotal": 79958016,
+          "heapUsed": 77848376,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "fetched": [
+        {
+          "cycle": 0,
+          "elapsedMs": 62.80839999999989,
+          "rss": 202874880,
+          "heapTotal": 79958016,
+          "heapUsed": 77870864,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 1,
+          "elapsedMs": 62.90400000000045,
+          "rss": 202874880,
+          "heapTotal": 79958016,
+          "heapUsed": 77871728,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 2,
+          "elapsedMs": 66.21939999999995,
+          "rss": 202874880,
+          "heapTotal": 79958016,
+          "heapUsed": 77874356,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 3,
+          "elapsedMs": 62.337399999999434,
+          "rss": 202874880,
+          "heapTotal": 79958016,
+          "heapUsed": 77876468,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        },
+        {
+          "cycle": 4,
+          "elapsedMs": 61.997299999999996,
+          "rss": 202874880,
+          "heapTotal": 79958016,
+          "heapUsed": 77876644,
+          "external": 4769618,
+          "arrayBuffers": 0,
+          "livePayloads": 0,
+          "livePayloadBytes": 0,
+          "activeTasks": 0,
+          "terminals": 0
+        }
+      ],
+      "controlBaseline": {
+        "rss": 202534912,
+        "heapTotal": 79958016,
+        "heapUsed": 77738416,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "reusedIdBaseline": {
+        "rss": 202772480,
+        "heapTotal": 79958016,
+        "heapUsed": 77802752,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "fetchedBaseline": {
+        "rss": 202809344,
+        "heapTotal": 79958016,
+        "heapUsed": 77848640,
+        "external": 4769618,
+        "arrayBuffers": 0,
+        "livePayloads": 0,
+        "livePayloadBytes": 0,
+        "activeTasks": 0,
+        "terminals": 0
+      },
+      "controlDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 57484,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "reusedIdDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 45624,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      },
+      "fetchedDelta": {
+        "arrayBuffers": 0,
+        "external": 0,
+        "heapUsed": 28004,
+        "livePayloads": 0,
+        "livePayloadBytes": 0
+      }
+    }
+  ]
+}
