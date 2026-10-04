@@ -1,0 +1,132 @@
+{
+  "before": [
+    {
+      "run": 1,
+      "medianMiBPerCycle": 19.673072814941406,
+      "controlMedianMiBPerCycle": 0.04316520690917969,
+      "worstMiBPerCycle": 19.931167602539062,
+      "currentMarkers": 2000,
+      "viewStates": 15976,
+      "staleStates": 13976,
+      "explicitClearStates": 0,
+      "heapDeltaMiB": 118.19131851196289,
+      "hiddenStates": [
+        2000,
+        3996,
+        5992,
+        7988,
+        9984,
+        11980,
+        13976
+      ],
+      "backingStorageDeltaBytes": -64977
+    },
+    {
+      "run": 2,
+      "medianMiBPerCycle": 19.76649284362793,
+      "controlMedianMiBPerCycle": 0.04261970520019531,
+      "worstMiBPerCycle": 19.906627655029297,
+      "currentMarkers": 2000,
+      "viewStates": 15976,
+      "staleStates": 13976,
+      "explicitClearStates": 0,
+      "heapDeltaMiB": 118.32546615600586,
+      "hiddenStates": [
+        2000,
+        3996,
+        5992,
+        7988,
+        9984,
+        11980,
+        13976
+      ],
+      "backingStorageDeltaBytes": -63677
+    },
+    {
+      "run": 3,
+      "medianMiBPerCycle": 19.663555145263672,
+      "controlMedianMiBPerCycle": 0.04397392272949219,
+      "worstMiBPerCycle": 19.917015075683594,
+      "currentMarkers": 2000,
+      "viewStates": 15976,
+      "staleStates": 13976,
+      "explicitClearStates": 0,
+      "heapDeltaMiB": 118.2029914855957,
+      "hiddenStates": [
+        2000,
+        3996,
+        5992,
+        7988,
+        9984,
+        11980,
+        13976
+      ],
+      "backingStorageDeltaBytes": -64997
+    }
+  ],
+  "after": [
+    {
+      "run": 1,
+      "medianMiBPerCycle": 0.13998031616210938,
+      "controlMedianMiBPerCycle": 0.046604156494140625,
+      "worstMiBPerCycle": 0.3007164001464844,
+      "currentMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "explicitClearStates": 0,
+      "heapDeltaMiB": 0.9833145141601562,
+      "hiddenStates": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "backingStorageDeltaBytes": 31
+    },
+    {
+      "run": 2,
+      "medianMiBPerCycle": 0.14422988891601562,
+      "controlMedianMiBPerCycle": 0.04134559631347656,
+      "worstMiBPerCycle": 0.34894561767578125,
+      "currentMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "explicitClearStates": 0,
+      "heapDeltaMiB": 0.9985466003417969,
+      "hiddenStates": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "backingStorageDeltaBytes": 11
+    },
+    {
+      "run": 3,
+      "medianMiBPerCycle": 0.1798725128173828,
+      "controlMedianMiBPerCycle": 0.0451202392578125,
+      "worstMiBPerCycle": 0.29274749755859375,
+      "currentMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "explicitClearStates": 0,
+      "heapDeltaMiB": 0.9811973571777344,
+      "hiddenStates": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "backingStorageDeltaBytes": 11
+    }
+  ]
+}

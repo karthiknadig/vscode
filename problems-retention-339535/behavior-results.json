@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "tree",
+    "filter": "Diagnostic 2",
+    "stats": {
+      "total": 2000,
+      "filtered": 500
+    },
+    "viewStates": 2000,
+    "currentTextVisible": true,
+    "navigation": {
+      "focusInProblems": true,
+      "role": "tree",
+      "label": "Showing 500 of 2000 problems"
+    }
+  },
+  {
+    "mode": "table",
+    "filter": "Diagnostic 2",
+    "stats": {
+      "total": 2000,
+      "filtered": 500
+    },
+    "viewStates": 2000,
+    "currentTextVisible": true,
+    "navigation": {
+      "focusInProblems": true,
+      "role": "list",
+      "label": "Problems View"
+    }
+  }
+]

@@ -1,0 +1,267 @@
+{
+  "boundary": "Real Problems UI toggled through the Command Palette; actual workbench MarkerService and view models; a synthetic provider replaces diagnostics while hidden.",
+  "input": {
+    "files": 500,
+    "markersPerFile": 4,
+    "markers": 2000,
+    "messageCharacters": 77,
+    "payloadBytes": 1478001
+  },
+  "warmupsPerMode": 1,
+  "measuredCyclesPerMode": 6,
+  "samples": [
+    {
+      "mode": "baseline",
+      "iteration": -1,
+      "usedSize": 129108072,
+      "totalSize": 131907584,
+      "embedderHeapUsedSize": 16465768,
+      "backingStorageSize": 85866622,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": true,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 0,
+      "usedSize": 129425664,
+      "totalSize": 131907584,
+      "embedderHeapUsedSize": 16273544,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 1,
+      "usedSize": 129747388,
+      "totalSize": 132431872,
+      "embedderHeapUsedSize": 16275664,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 2,
+      "usedSize": 129812020,
+      "totalSize": 132169728,
+      "embedderHeapUsedSize": 16275112,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 3,
+      "usedSize": 129855640,
+      "totalSize": 132169728,
+      "embedderHeapUsedSize": 16275824,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 4,
+      "usedSize": 129848092,
+      "totalSize": 132169728,
+      "embedderHeapUsedSize": 16275928,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 5,
+      "usedSize": 129868104,
+      "totalSize": 132169728,
+      "embedderHeapUsedSize": 16276664,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "visible-update-control",
+      "iteration": 6,
+      "usedSize": 129913864,
+      "totalSize": 132169728,
+      "embedderHeapUsedSize": 16276752,
+      "backingStorageSize": 85867027,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 2000,
+      "staleStates": 0,
+      "cachePopulated": false,
+      "visible": true
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 0,
+      "usedSize": 151122224,
+      "totalSize": 153800704,
+      "embedderHeapUsedSize": 16711072,
+      "backingStorageSize": 86000442,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 4000,
+      "staleStates": 2000,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 2000
+      },
+      "hiddenStates": 2000
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 1,
+      "usedSize": 171992268,
+      "totalSize": 175427584,
+      "embedderHeapUsedSize": 16898072,
+      "backingStorageSize": 85935225,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 5996,
+      "staleStates": 3996,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 3996
+      },
+      "hiddenStates": 3996
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 2,
+      "usedSize": 192400128,
+      "totalSize": 195612672,
+      "embedderHeapUsedSize": 16880928,
+      "backingStorageSize": 86130821,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 7992,
+      "staleStates": 5992,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 5992
+      },
+      "hiddenStates": 5992
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 3,
+      "usedSize": 213273740,
+      "totalSize": 216293376,
+      "embedderHeapUsedSize": 16687304,
+      "backingStorageSize": 85868985,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 9988,
+      "staleStates": 7988,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 7988
+      },
+      "hiddenStates": 7988
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 4,
+      "usedSize": 234129648,
+      "totalSize": 237264896,
+      "embedderHeapUsedSize": 16911056,
+      "backingStorageSize": 86131437,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 11984,
+      "staleStates": 9984,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 9984
+      },
+      "hiddenStates": 9984
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 5,
+      "usedSize": 254598036,
+      "totalSize": 257712128,
+      "embedderHeapUsedSize": 16553992,
+      "backingStorageSize": 85869601,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 13980,
+      "staleStates": 11980,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 11980
+      },
+      "hiddenStates": 11980
+    },
+    {
+      "mode": "hide-update-show",
+      "iteration": 6,
+      "usedSize": 275195468,
+      "totalSize": 278945792,
+      "embedderHeapUsedSize": 16815736,
+      "backingStorageSize": 85936765,
+      "markers": 2000,
+      "serviceMarkers": 2000,
+      "viewStates": 15976,
+      "staleStates": 13976,
+      "cachePopulated": true,
+      "visible": true,
+      "beforeHide": {
+        "cachePopulated": false,
+        "states": 13976
+      },
+      "hiddenStates": 13976
+    }
+  ],
+  "afterExplicitClear": {
+    "currentMarkers": 0,
+    "viewStates": 0,
+    "usedSize": 122585472,
+    "totalSize": 125358080,
+    "embedderHeapUsedSize": 15886040,
+    "backingStorageSize": 85867459
+  }
+}

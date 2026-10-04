@@ -1,0 +1,2 @@
+# Preserve the exact scenario bytes used in both measured builds.
+problems-retention.scenario.cjs -text
