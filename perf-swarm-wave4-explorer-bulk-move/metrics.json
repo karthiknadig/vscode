@@ -1,0 +1,640 @@
+{
+  "issue": "https://github.com/microsoft/vscode/issues/339610",
+  "baselineHead": "24a41178148f72f49e4ac0756ddb3b5347429a91",
+  "fixedHead": "19ad8071e6989a74ab0697bf62c14ca9c0e9f2c8",
+  "platform": "Windows x64, Code OSS 1.141.0 Dev, Electron 43.7.5",
+  "fixture": {
+    "files": 1024,
+    "bytes": 23552,
+    "movedFiles": 32
+  },
+  "method": {
+    "primaryFreshWindowsPerRevision": 3,
+    "primaryWarmupPerArmPerWindow": 1,
+    "primaryMeasuredSamplesPerArmPerWindow": 5,
+    "supplementaryFreshWindowsPerRevision": 1,
+    "supplementaryWarmup": 1,
+    "supplementaryMeasuredSamples": 5,
+    "quiescence": "Exact current model/tree, no pending tree refresh or file-change scheduler/backlog, then 600 ms quiet.",
+    "counts": "Separate precisely-covered move through quiescence; base and compressible render methods are reported separately.",
+    "control": "Same input and operation, parents collapsed only in diagnostic control; never used as fixed expanded results.",
+    "timing": "Asynchronous operation and exact painted completion, not a renderer single-task or memory measurement."
+  },
+  "before": {
+    "primary": {
+      "windows": [
+        {
+          "window": 1,
+          "expanded": {
+            "operationMedianMs": 2090.8,
+            "operationWorstMs": 3822.1,
+            "paintedMedianMs": 2161.8,
+            "samples": [
+              {
+                "operationMs": 3822.1,
+                "paintedMs": 3950.6
+              },
+              {
+                "operationMs": 3523.6,
+                "paintedMs": 3578.7
+              },
+              {
+                "operationMs": 1983.6,
+                "paintedMs": 2058.1
+              },
+              {
+                "operationMs": 2090.8,
+                "paintedMs": 2161.8
+              },
+              {
+                "operationMs": 2019.1,
+                "paintedMs": 2094.8
+              }
+            ]
+          },
+          "collapsedControl": {
+            "operationMedianMs": 204.3,
+            "operationWorstMs": 208.9,
+            "paintedMedianMs": 230.5,
+            "samples": [
+              {
+                "operationMs": 208.9,
+                "paintedMs": 230.5
+              },
+              {
+                "operationMs": 206.6,
+                "paintedMs": 236.2
+              },
+              {
+                "operationMs": 204.3,
+                "paintedMs": 234.5
+              },
+              {
+                "operationMs": 199.1,
+                "paintedMs": 227.7
+              },
+              {
+                "operationMs": 203.6,
+                "paintedMs": 230.3
+              }
+            ]
+          }
+        },
+        {
+          "window": 2,
+          "expanded": {
+            "operationMedianMs": 2036.6,
+            "operationWorstMs": 2226.1,
+            "paintedMedianMs": 2129.1,
+            "samples": [
+              {
+                "operationMs": 2036.6,
+                "paintedMs": 2129.1
+              },
+              {
+                "operationMs": 2185.9,
+                "paintedMs": 2247.5
+              },
+              {
+                "operationMs": 1974.4,
+                "paintedMs": 2050.5
+              },
+              {
+                "operationMs": 2226.1,
+                "paintedMs": 2295.9
+              },
+              {
+                "operationMs": 2006.2,
+                "paintedMs": 2094.6
+              }
+            ]
+          },
+          "collapsedControl": {
+            "operationMedianMs": 206.1,
+            "operationWorstMs": 239.9,
+            "paintedMedianMs": 228.8,
+            "samples": [
+              {
+                "operationMs": 201.1,
+                "paintedMs": 219.5
+              },
+              {
+                "operationMs": 206.1,
+                "paintedMs": 221.6
+              },
+              {
+                "operationMs": 239.9,
+                "paintedMs": 264
+              },
+              {
+                "operationMs": 210.8,
+                "paintedMs": 228.8
+              },
+              {
+                "operationMs": 202.2,
+                "paintedMs": 228.9
+              }
+            ]
+          }
+        },
+        {
+          "window": 3,
+          "expanded": {
+            "operationMedianMs": 2127.8,
+            "operationWorstMs": 2270.4,
+            "paintedMedianMs": 2186.9,
+            "samples": [
+              {
+                "operationMs": 2127.8,
+                "paintedMs": 2184.2
+              },
+              {
+                "operationMs": 2270.4,
+                "paintedMs": 2347.2
+              },
+              {
+                "operationMs": 2110.4,
+                "paintedMs": 2186.9
+              },
+              {
+                "operationMs": 2231.1,
+                "paintedMs": 2272.4
+              },
+              {
+                "operationMs": 2071.6,
+                "paintedMs": 2140.5
+              }
+            ]
+          },
+          "collapsedControl": {
+            "operationMedianMs": 199.4,
+            "operationWorstMs": 203.6,
+            "paintedMedianMs": 217.5,
+            "samples": [
+              {
+                "operationMs": 199.4,
+                "paintedMs": 217.5
+              },
+              {
+                "operationMs": 198.6,
+                "paintedMs": 217.2
+              },
+              {
+                "operationMs": 196.3,
+                "paintedMs": 214.3
+              },
+              {
+                "operationMs": 200.3,
+                "paintedMs": 220.1
+              },
+              {
+                "operationMs": 203.6,
+                "paintedMs": 228.2
+              }
+            ]
+          }
+        }
+      ],
+      "expanded": {
+        "operationMedianMs": 2110.4,
+        "operationWorstMs": 3822.1,
+        "paintedMedianMs": 2184.2
+      },
+      "collapsedControl": {
+        "operationMedianMs": 203.6,
+        "operationWorstMs": 239.9,
+        "paintedMedianMs": 228.2
+      },
+      "exactModelAndDiskNames": true
+    },
+    "supplementary": {
+      "paintedExactMedianMs": 3100.9,
+      "paintedExactWorstMs": 3178.5,
+      "quiescentMedianMs": 4061.8,
+      "samples": [
+        {
+          "operationMs": 3054.7,
+          "paintedExactMs": 3100.9,
+          "quiescentMs": 4115.9,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32
+        },
+        {
+          "operationMs": 3081.8,
+          "paintedExactMs": 3178.5,
+          "quiescentMs": 4109.6,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0
+        },
+        {
+          "operationMs": 2878.7,
+          "paintedExactMs": 2932.7,
+          "quiescentMs": 4051.7,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32
+        },
+        {
+          "operationMs": 3036.8,
+          "paintedExactMs": 3148.7,
+          "quiescentMs": 4061.8,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0
+        },
+        {
+          "operationMs": 2990,
+          "paintedExactMs": 3039.8,
+          "quiescentMs": 3912.1,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32
+        }
+      ],
+      "countsThroughQuiescence": {
+        "parentRefreshes": 64,
+        "treePasses": 64,
+        "compressibleRenderCalls": 64,
+        "totalRenderMethodCalls": 128
+      },
+      "compatibility": [
+        {
+          "action": "real 32-file drag",
+          "paintedIncludingAutomationMs": 2720.1,
+          "totalThroughQuiescenceMs": 3584,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32,
+          "focus": [],
+          "selection": [],
+          "expanded": true,
+          "visibleEntries": [
+            "case00032.ts",
+            "case01023.ts",
+            "case00000.ts",
+            "case00031.ts"
+          ]
+        },
+        {
+          "action": "undo",
+          "paintedIncludingAutomationMs": 2222.2,
+          "totalThroughQuiescenceMs": 3156,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0,
+          "focus": [],
+          "selection": [],
+          "expanded": true,
+          "visibleEntries": [
+            "case00000.ts",
+            "case01023.ts"
+          ]
+        },
+        {
+          "action": "redo",
+          "paintedIncludingAutomationMs": 2373.6,
+          "totalThroughQuiescenceMs": 3721,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32,
+          "focus": [],
+          "selection": [],
+          "expanded": true,
+          "visibleEntries": [
+            "case00032.ts",
+            "case01023.ts",
+            "case00000.ts",
+            "case00031.ts"
+          ]
+        },
+        {
+          "action": "keyboard cut/paste 32 files",
+          "paintedIncludingAutomationMs": 2534.6,
+          "totalThroughQuiescenceMs": 3559,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0,
+          "focus": [
+            "case00000.ts"
+          ],
+          "selection": [
+            "case00000.ts"
+          ],
+          "expanded": true,
+          "visibleEntries": [
+            "case00000.ts",
+            "case01023.ts"
+          ]
+        }
+      ],
+      "exactModelTreeDiskAndVisibleEntries": true,
+      "expansionAndUnmovedFocusSelectionPreserved": true
+    }
+  },
+  "after": {
+    "primary": {
+      "windows": [
+        {
+          "window": 1,
+          "expanded": {
+            "operationMedianMs": 238.2,
+            "operationWorstMs": 285.6,
+            "paintedMedianMs": 251.6,
+            "samples": [
+              {
+                "operationMs": 238.2,
+                "paintedMs": 251.6
+              },
+              {
+                "operationMs": 231,
+                "paintedMs": 244.4
+              },
+              {
+                "operationMs": 232.9,
+                "paintedMs": 246.2
+              },
+              {
+                "operationMs": 249.5,
+                "paintedMs": 262.8
+              },
+              {
+                "operationMs": 285.6,
+                "paintedMs": 299.1
+              }
+            ]
+          },
+          "collapsedControl": {
+            "operationMedianMs": 177.9,
+            "operationWorstMs": 200.3,
+            "paintedMedianMs": 184.7,
+            "samples": [
+              {
+                "operationMs": 174.2,
+                "paintedMs": 180.3
+              },
+              {
+                "operationMs": 177.9,
+                "paintedMs": 184.7
+              },
+              {
+                "operationMs": 199.9,
+                "paintedMs": 202.9
+              },
+              {
+                "operationMs": 200.3,
+                "paintedMs": 216.4
+              },
+              {
+                "operationMs": 175.4,
+                "paintedMs": 182.4
+              }
+            ]
+          }
+        },
+        {
+          "window": 2,
+          "expanded": {
+            "operationMedianMs": 234.1,
+            "operationWorstMs": 262.7,
+            "paintedMedianMs": 247.7,
+            "samples": [
+              {
+                "operationMs": 238.3,
+                "paintedMs": 251.7
+              },
+              {
+                "operationMs": 232.4,
+                "paintedMs": 245.8
+              },
+              {
+                "operationMs": 262.7,
+                "paintedMs": 276.7
+              },
+              {
+                "operationMs": 234.1,
+                "paintedMs": 247.7
+              },
+              {
+                "operationMs": 233.2,
+                "paintedMs": 246.6
+              }
+            ]
+          },
+          "collapsedControl": {
+            "operationMedianMs": 183.2,
+            "operationWorstMs": 210,
+            "paintedMedianMs": 197.2,
+            "samples": [
+              {
+                "operationMs": 205.9,
+                "paintedMs": 221.2
+              },
+              {
+                "operationMs": 210,
+                "paintedMs": 217.8
+              },
+              {
+                "operationMs": 183.2,
+                "paintedMs": 197.2
+              },
+              {
+                "operationMs": 180,
+                "paintedMs": 184.3
+              },
+              {
+                "operationMs": 177.7,
+                "paintedMs": 185.8
+              }
+            ]
+          }
+        },
+        {
+          "window": 3,
+          "expanded": {
+            "operationMedianMs": 264.3,
+            "operationWorstMs": 280.7,
+            "paintedMedianMs": 278.6,
+            "samples": [
+              {
+                "operationMs": 230.7,
+                "paintedMs": 245
+              },
+              {
+                "operationMs": 280.7,
+                "paintedMs": 294.9
+              },
+              {
+                "operationMs": 264.3,
+                "paintedMs": 278.6
+              },
+              {
+                "operationMs": 253.5,
+                "paintedMs": 267.3
+              },
+              {
+                "operationMs": 266.4,
+                "paintedMs": 280.3
+              }
+            ]
+          },
+          "collapsedControl": {
+            "operationMedianMs": 203.6,
+            "operationWorstMs": 251.3,
+            "paintedMedianMs": 216.5,
+            "samples": [
+              {
+                "operationMs": 202.5,
+                "paintedMs": 216.5
+              },
+              {
+                "operationMs": 251.3,
+                "paintedMs": 267.2
+              },
+              {
+                "operationMs": 208.3,
+                "paintedMs": 216.3
+              },
+              {
+                "operationMs": 196.9,
+                "paintedMs": 197.9
+              },
+              {
+                "operationMs": 203.6,
+                "paintedMs": 218.7
+              }
+            ]
+          }
+        }
+      ],
+      "expanded": {
+        "operationMedianMs": 238.3,
+        "operationWorstMs": 285.6,
+        "paintedMedianMs": 251.7
+      },
+      "collapsedControl": {
+        "operationMedianMs": 199.9,
+        "operationWorstMs": 251.3,
+        "paintedMedianMs": 202.9
+      },
+      "exactModelAndDiskNames": true
+    },
+    "supplementary": {
+      "paintedExactMedianMs": 333.1,
+      "paintedExactWorstMs": 366.2,
+      "quiescentMedianMs": 1183.9,
+      "samples": [
+        {
+          "operationMs": 360.6,
+          "paintedExactMs": 366.2,
+          "quiescentMs": 1188.4,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32
+        },
+        {
+          "operationMs": 327.7,
+          "paintedExactMs": 333.1,
+          "quiescentMs": 1183.9,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0
+        },
+        {
+          "operationMs": 340.4,
+          "paintedExactMs": 346.8,
+          "quiescentMs": 1151.2,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32
+        },
+        {
+          "operationMs": 315.1,
+          "paintedExactMs": 320.2,
+          "quiescentMs": 1187.3,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0
+        },
+        {
+          "operationMs": 308.3,
+          "paintedExactMs": 313.5,
+          "quiescentMs": 1183.1,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32
+        }
+      ],
+      "countsThroughQuiescence": {
+        "parentRefreshes": 2,
+        "treePasses": 2,
+        "compressibleRenderCalls": 2,
+        "totalRenderMethodCalls": 4
+      },
+      "compatibility": [
+        {
+          "action": "real 32-file drag",
+          "paintedIncludingAutomationMs": 445.7,
+          "totalThroughQuiescenceMs": 1394,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32,
+          "focus": [],
+          "selection": [],
+          "expanded": true,
+          "visibleEntries": [
+            "case00032.ts",
+            "case01023.ts",
+            "case00000.ts",
+            "case00031.ts"
+          ]
+        },
+        {
+          "action": "undo",
+          "paintedIncludingAutomationMs": 301.2,
+          "totalThroughQuiescenceMs": 1294,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0,
+          "focus": [],
+          "selection": [],
+          "expanded": true,
+          "visibleEntries": [
+            "case00000.ts",
+            "case01023.ts"
+          ]
+        },
+        {
+          "action": "redo",
+          "paintedIncludingAutomationMs": 288.5,
+          "totalThroughQuiescenceMs": 1417,
+          "sourceTreeCount": 992,
+          "targetTreeCount": 32,
+          "focus": [],
+          "selection": [],
+          "expanded": true,
+          "visibleEntries": [
+            "case00032.ts",
+            "case01023.ts",
+            "case00000.ts",
+            "case00031.ts"
+          ]
+        },
+        {
+          "action": "keyboard cut/paste 32 files",
+          "paintedIncludingAutomationMs": 369.6,
+          "totalThroughQuiescenceMs": 1215,
+          "sourceTreeCount": 1024,
+          "targetTreeCount": 0,
+          "focus": [
+            "case00000.ts"
+          ],
+          "selection": [
+            "case00000.ts"
+          ],
+          "expanded": true,
+          "visibleEntries": [
+            "case00000.ts",
+            "case01023.ts"
+          ]
+        }
+      ],
+      "exactModelTreeDiskAndVisibleEntries": true,
+      "expansionAndUnmovedFocusSelectionPreserved": true
+    }
+  },
+  "improvement": {
+    "expandedOperationRatio": 8.9,
+    "paintedExactRatio": 9.3
+  },
+  "limits": [
+    "Local synthetic Windows fixture; no installed Insiders, macOS/Linux, remote/provider or screen-reader comparison.",
+    "No memory-leak, cache-capacity, generic tree-queue or universal regression-free claim.",
+    "Quiescent totals include the existing file-change reaction delay and deliberate 600 ms observation window."
+  ]
+}
