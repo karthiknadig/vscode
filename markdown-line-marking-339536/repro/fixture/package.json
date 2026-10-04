@@ -1,0 +1,17 @@
+{
+	"name": "markdown-webview-hunt-driver",
+	"displayName": "Markdown Webview Hunt Driver",
+	"publisher": "local-perf-hunt",
+	"version": "0.0.1",
+	"engines": { "vscode": "^1.100.0" },
+	"main": "./extension.cjs",
+	"activationEvents": ["onCommand:markdownHunt.openPreview", "onCommand:markdownHunt.openDiff", "onCommand:markdownHunt.render"],
+	"capabilities": { "untrustedWorkspaces": { "supported": true } },
+	"contributes": {
+		"commands": [
+			{ "command": "markdownHunt.openPreview", "title": "Markdown Hunt: Open Fixture Preview" },
+			{ "command": "markdownHunt.openDiff", "title": "Markdown Hunt: Open Fixture Rendered Diff" },
+			{ "command": "markdownHunt.render", "title": "Markdown Hunt: Measure Built-in Parser" }
+		]
+	}
+}

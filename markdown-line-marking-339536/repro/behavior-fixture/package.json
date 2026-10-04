@@ -1,0 +1,12 @@
+{
+	"name": "markdown-line-map-smoke",
+	"displayName": "Markdown Line Map Smoke",
+	"publisher": "local-perf-hunt",
+	"version": "0.0.1",
+	"engines": { "vscode": "^1.100.0" },
+	"main": "./extension.cjs",
+	"activationEvents": ["onCommand:markdownLineMapSmoke.run"],
+	"contributes": {
+		"commands": [{ "command": "markdownLineMapSmoke.run", "title": "Markdown Line Map Smoke: Run" }]
+	}
+}

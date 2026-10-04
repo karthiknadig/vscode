@@ -1,0 +1,4002 @@
+{
+  "issue": "https://github.com/microsoft/vscode/issues/339536",
+  "baseCommit": "6fad7188e7dbf7db564e5e4a85960eb2bf69bdf4",
+  "fixedCommit": "47cf6ef3570078b80cee82628c999de0217cb47c",
+  "scenarioSha256": "a2d00067d7092f96b58c371df23859449e7b04a6a41900ce9e420eef5a5f6574",
+  "helperSha256": "8c3961d931517f500224321c53cefc6c77472a2b48a088d06302dbc25c609037",
+  "measurement": {
+    "scope": "Real built-in Markdown preview updateContent handler with synthetic valid added-line metadata. Not full diff-opening latency.",
+    "platform": "Windows x64 / Code OSS 1.141.0 Dev / Node 24.20.0",
+    "windowsPerSide": 3,
+    "warmupsPerSizeAndMode": 1,
+    "measuredSamplesPerSizeAndMode": 5,
+    "thresholdMs": 200,
+    "inputSizes": [
+      100,
+      8000,
+      16000
+    ],
+    "inputBytes": [
+      5900,
+      472000,
+      944000
+    ],
+    "oracle": "Every paragraph equals independently generated text; every added paragraph marker and every unmarked control is checked.",
+    "installedComparison": "Unavailable: shared Insiders installation has a pending update; not applied or bypassed."
+  },
+  "before": [
+    {
+      "window": 1,
+      "outcome": "failed",
+      "cases": [
+        {
+          "count": 100,
+          "inputBytes": 5900,
+          "htmlBytes": 11382,
+          "lineCount": 200,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 3.2000000178813934,
+              "worstMs": 4,
+              "samples": [
+                {
+                  "syncMs": 3.7000000178813934,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.2000000178813934,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.7999999821186066,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.199999988079071,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 4.5,
+              "worstMs": 4.699999988079071,
+              "samples": [
+                {
+                  "syncMs": 4.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.199999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.300000011920929,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 0.699999988079071,
+              "worstMs": 0.8999999761581421,
+              "samples": [
+                {
+                  "syncMs": 0.7000000178813934,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.8999999761581421,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0,
+              "worstMs": 0,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 8000,
+          "inputBytes": 472000,
+          "htmlBytes": 890884,
+          "lineCount": 16000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 23.900000005960464,
+              "worstMs": 27.80000001192093,
+              "samples": [
+                {
+                  "syncMs": 24.19999998807907,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.5,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22.200000017881393,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.900000005960464,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 27.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 219.59999999403954,
+              "worstMs": 302.59999999403954,
+              "samples": [
+                {
+                  "syncMs": 210.40000000596046,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 204.7999999821186,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 219.59999999403954,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 302.59999999403954,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 282.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 20.80000001192093,
+              "worstMs": 21,
+              "samples": [
+                {
+                  "syncMs": 20.900000005960464,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.599999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.599999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0,
+              "worstMs": 0.09999999403953552,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 16000,
+          "inputBytes": 944000,
+          "htmlBytes": 1786884,
+          "lineCount": 32000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 43.69999998807907,
+              "worstMs": 44.5,
+              "samples": [
+                {
+                  "syncMs": 44.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43.20000001788139,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43.099999994039536,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 44.5,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 921.4000000059605,
+              "worstMs": 1138.800000011921,
+              "samples": [
+                {
+                  "syncMs": 598.8999999761581,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 587,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 1057.9000000059605,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 1138.800000011921,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 921.4000000059605,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 40.19999998807907,
+              "worstMs": 42.69999998807907,
+              "samples": [
+                {
+                  "syncMs": 42.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40.19999998807907,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.29999998211861,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.09999999403953552,
+              "samples": [
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "window": 2,
+      "outcome": "failed",
+      "cases": [
+        {
+          "count": 100,
+          "inputBytes": 5900,
+          "htmlBytes": 11382,
+          "lineCount": 200,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 3.300000011920929,
+              "worstMs": 3.7999999821186066,
+              "samples": [
+                {
+                  "syncMs": 3.5,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.7999999821186066,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.800000011920929,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.300000011920929,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 4.5,
+              "worstMs": 4.899999976158142,
+              "samples": [
+                {
+                  "syncMs": 4.899999976158142,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.600000023841858,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.200000017881393,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 0.5999999940395355,
+              "worstMs": 0.699999988079071,
+              "samples": [
+                {
+                  "syncMs": 0.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.6000000238418579,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0,
+              "worstMs": 0,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 8000,
+          "inputBytes": 472000,
+          "htmlBytes": 890884,
+          "lineCount": 16000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 22.599999994039536,
+              "worstMs": 24.5,
+              "samples": [
+                {
+                  "syncMs": 24.5,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.599999994039536,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.900000005960464,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22.599999994039536,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.30000001192093,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 272.69999998807907,
+              "worstMs": 276.30000001192093,
+              "samples": [
+                {
+                  "syncMs": 236.90000000596046,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 209,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 272.69999998807907,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 275.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 276.30000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 21.100000023841858,
+              "worstMs": 21.399999976158142,
+              "samples": [
+                {
+                  "syncMs": 21.399999976158142,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.100000023841858,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.400000005960464,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.30000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.600000023841858,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.09999999403953552,
+              "samples": [
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 16000,
+          "inputBytes": 944000,
+          "htmlBytes": 1786884,
+          "lineCount": 32000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 41.29999998211861,
+              "worstMs": 42.5,
+              "samples": [
+                {
+                  "syncMs": 41.29999998211861,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 41.29999998211861,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.5,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 711.2999999821186,
+              "worstMs": 865.5999999940395,
+              "samples": [
+                {
+                  "syncMs": 588.5,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 574.8000000119209,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 711.2999999821186,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 865.5999999940395,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 865.3000000119209,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 40.30000001192093,
+              "worstMs": 43,
+              "samples": [
+                {
+                  "syncMs": 40.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.80000001192093,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.10000002384185791,
+              "worstMs": 0.20000001788139343,
+              "samples": [
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.20000001788139343,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "window": 3,
+      "outcome": "failed",
+      "cases": [
+        {
+          "count": 100,
+          "inputBytes": 5900,
+          "htmlBytes": 11382,
+          "lineCount": 200,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 3.2000000178813934,
+              "worstMs": 3.899999976158142,
+              "samples": [
+                {
+                  "syncMs": 3.4000000059604645,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.899999976158142,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.2000000178813934,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.7999999821186066,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.800000011920929,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 4.100000023841858,
+              "worstMs": 4.699999988079071,
+              "samples": [
+                {
+                  "syncMs": 4.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.0999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.100000023841858,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 0.6000000238418579,
+              "worstMs": 0.800000011920929,
+              "samples": [
+                {
+                  "syncMs": 0.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.6000000238418579,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.800000011920929,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.19999998807907104,
+              "samples": [
+                {
+                  "syncMs": 0.19999998807907104,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 8000,
+          "inputBytes": 472000,
+          "htmlBytes": 890884,
+          "lineCount": 16000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 23,
+              "worstMs": 24,
+              "samples": [
+                {
+                  "syncMs": 24,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.5,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.5,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 310,
+              "worstMs": 314.40000000596046,
+              "samples": [
+                {
+                  "syncMs": 232.69999998807907,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 208.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 311.69999998807907,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 314.40000000596046,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 310,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 20,
+              "worstMs": 21.099999994039536,
+              "samples": [
+                {
+                  "syncMs": 21.099999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 19.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 19.200000017881393,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.09999999403953552,
+              "samples": [
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 16000,
+          "inputBytes": 944000,
+          "htmlBytes": 1786884,
+          "lineCount": 32000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 43.89999997615814,
+              "worstMs": 44.900000005960464,
+              "samples": [
+                {
+                  "syncMs": 44.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43.89999997615814,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 43.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 44.20000001788139,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 724.1999999880791,
+              "worstMs": 1249.199999988079,
+              "samples": [
+                {
+                  "syncMs": 597.0999999940395,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 581.7999999821186,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 724.1999999880791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 1249.199999988079,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 1062.5999999940395,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 42.69999998807907,
+              "worstMs": 42.900000005960464,
+              "samples": [
+                {
+                  "syncMs": 42.10000002384186,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.89999997615814,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.10000002384186,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.10000002384185791,
+              "worstMs": 0.20000001788139343,
+              "samples": [
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.20000001788139343,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "window": 1,
+      "outcome": "passed",
+      "cases": [
+        {
+          "count": 100,
+          "inputBytes": 5900,
+          "htmlBytes": 11382,
+          "lineCount": 200,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 3.199999988079071,
+              "worstMs": 3.4000000059604645,
+              "samples": [
+                {
+                  "syncMs": 3.4000000059604645,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.2000000178813934,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.199999988079071,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.800000011920929,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.800000011920929,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 3.600000023841858,
+              "worstMs": 3.9000000059604645,
+              "samples": [
+                {
+                  "syncMs": 3.7999999821186066,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.600000023841858,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.199999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 0.699999988079071,
+              "worstMs": 0.7000000178813934,
+              "samples": [
+                {
+                  "syncMs": 0.7000000178813934,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.7000000178813934,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.10000002384185791,
+              "worstMs": 0.19999998807907104,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.19999998807907104,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 8000,
+          "inputBytes": 472000,
+          "htmlBytes": 890884,
+          "lineCount": 16000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 24,
+              "worstMs": 26,
+              "samples": [
+                {
+                  "syncMs": 26,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 24.400000005960464,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 24,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.799999982118607,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22.700000017881393,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 73,
+              "worstMs": 78.2000000178814,
+              "samples": [
+                {
+                  "syncMs": 75.90000000596046,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 78.2000000178814,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 73,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 70.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 71.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 20.599999994039536,
+              "worstMs": 20.80000001192093,
+              "samples": [
+                {
+                  "syncMs": 20.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.700000017881393,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.599999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.30000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.09999999403953552,
+              "samples": [
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 16000,
+          "inputBytes": 944000,
+          "htmlBytes": 1786884,
+          "lineCount": 32000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 42.19999998807907,
+              "worstMs": 42.599999994039536,
+              "samples": [
+                {
+                  "syncMs": 42.599999994039536,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 41.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.19999998807907,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.19999998807907,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 142.09999999403954,
+              "worstMs": 144.59999999403954,
+              "samples": [
+                {
+                  "syncMs": 144.59999999403954,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 144.2999999821186,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 140.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 142.09999999403954,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 137.7000000178814,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 39.80000001192093,
+              "worstMs": 40.79999998211861,
+              "samples": [
+                {
+                  "syncMs": 40.79999998211861,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40.099999994039536,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.5,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.80000001192093,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.599999994039536,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.20000001788139343,
+              "samples": [
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.20000001788139343,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "window": 2,
+      "outcome": "passed",
+      "cases": [
+        {
+          "count": 100,
+          "inputBytes": 5900,
+          "htmlBytes": 11382,
+          "lineCount": 200,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 3.300000011920929,
+              "worstMs": 4.0999999940395355,
+              "samples": [
+                {
+                  "syncMs": 3.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 4.0999999940395355,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.0999999940395355,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.300000011920929,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 3.300000011920929,
+              "worstMs": 3.800000011920929,
+              "samples": [
+                {
+                  "syncMs": 3.800000011920929,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.300000011920929,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.199999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.300000011920929,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 0.5999999940395355,
+              "worstMs": 1.5,
+              "samples": [
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 1.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.6000000238418579,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0,
+              "worstMs": 0.20000001788139343,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.20000001788139343,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 8000,
+          "inputBytes": 472000,
+          "htmlBytes": 890884,
+          "lineCount": 16000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 24,
+              "worstMs": 25.200000017881393,
+              "samples": [
+                {
+                  "syncMs": 25.200000017881393,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 24.599999994039536,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.399999976158142,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 24,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22.5,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 72.09999999403954,
+              "worstMs": 77.09999999403954,
+              "samples": [
+                {
+                  "syncMs": 77.09999999403954,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 76.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 71.2000000178814,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 71.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 72.09999999403954,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 20.5,
+              "worstMs": 21.400000005960464,
+              "samples": [
+                {
+                  "syncMs": 21.400000005960464,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.19999998807907,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.099999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.099999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.10000002384185791,
+              "worstMs": 0.19999998807907104,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.19999998807907104,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 16000,
+          "inputBytes": 944000,
+          "htmlBytes": 1786884,
+          "lineCount": 32000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 42.30000001192093,
+              "worstMs": 44.39999997615814,
+              "samples": [
+                {
+                  "syncMs": 43.29999998211861,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 41.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 42.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 44.39999997615814,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 142.5,
+              "worstMs": 148.30000001192093,
+              "samples": [
+                {
+                  "syncMs": 148.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 143.90000000596046,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 139.7999999821186,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 142.5,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 137.5,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 39.20000001788139,
+              "worstMs": 40.400000005960464,
+              "samples": [
+                {
+                  "syncMs": 40.400000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.70000001788139,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.20000001788139,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.20000001788139,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 38.900000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.19999998807907104,
+              "samples": [
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.19999998807907104,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "window": 3,
+      "outcome": "passed",
+      "cases": [
+        {
+          "count": 100,
+          "inputBytes": 5900,
+          "htmlBytes": 11382,
+          "lineCount": 200,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 3.0999999940395355,
+              "worstMs": 3.5999999940395355,
+              "samples": [
+                {
+                  "syncMs": 3.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.4000000059604645,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.0999999940395355,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 2.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 3.699999988079071,
+              "worstMs": 3.9000000059604645,
+              "samples": [
+                {
+                  "syncMs": 3.699999988079071,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.7999999821186066,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.2999999821186066,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 3.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 0.5999999940395355,
+              "worstMs": 0.9000000059604645,
+              "samples": [
+                {
+                  "syncMs": 0.9000000059604645,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5999999940395355,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.5,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0.09999999403953552,
+              "worstMs": 0.10000002384185791,
+              "samples": [
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 100,
+                  "marked": 100,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 8000,
+          "inputBytes": 472000,
+          "htmlBytes": 890884,
+          "lineCount": 16000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 23.799999982118607,
+              "worstMs": 24.5,
+              "samples": [
+                {
+                  "syncMs": 24.5,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 24.099999994039536,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22.80000001192093,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 23.799999982118607,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22.19999998807907,
+                  "paragraphs": 8000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 72.30000001192093,
+              "worstMs": 78.10000002384186,
+              "samples": [
+                {
+                  "syncMs": 78.10000002384186,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 77.09999999403954,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 71.69999998807907,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 71.10000002384186,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 72.30000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 21.19999998807907,
+              "worstMs": 22,
+              "samples": [
+                {
+                  "syncMs": 21.30000001192093,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 22,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 21.19999998807907,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.5,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 20.099999994039536,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0,
+              "worstMs": 0.09999999403953552,
+              "samples": [
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.09999999403953552,
+                  "paragraphs": 8000,
+                  "marked": 8000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "count": 16000,
+          "inputBytes": 944000,
+          "htmlBytes": 1786884,
+          "lineCount": 32000,
+          "initialMarkedParagraphs": 0,
+          "initialModifiedGutters": 0,
+          "markedHeadings": 0,
+          "exactTextCorrect": true,
+          "modes": {
+            "unchanged": {
+              "medianMs": 41.20000001788139,
+              "worstMs": 50.30000001192093,
+              "samples": [
+                {
+                  "syncMs": 44,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 50.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 41.20000001788139,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40.29999998211861,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40.80000001192093,
+                  "paragraphs": 16000,
+                  "marked": 0,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "added": {
+              "medianMs": 144.90000000596046,
+              "worstMs": 146.39999997615814,
+              "samples": [
+                {
+                  "syncMs": 146.39999997615814,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 146.2000000178814,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 142.90000000596046,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 144.90000000596046,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 139.69999998807907,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll": {
+              "medianMs": 39.400000005960464,
+              "worstMs": 40.5,
+              "samples": [
+                {
+                  "syncMs": 40.5,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.400000005960464,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.30000001192093,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 40,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 39.29999998211861,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            },
+            "scroll-suppressed": {
+              "medianMs": 0,
+              "worstMs": 0.19999998807907104,
+              "samples": [
+                {
+                  "syncMs": 0.19999998807907104,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0.10000002384185791,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                },
+                {
+                  "syncMs": 0,
+                  "paragraphs": 16000,
+                  "marked": 16000,
+                  "markedHeadings": 0,
+                  "modifiedGutters": 0,
+                  "correctText": true,
+                  "scrollY": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "behavior": {
+    "outcome": "passed",
+    "steps": [
+      {
+        "id": "ordinary",
+        "result": "passed",
+        "details": "Exact text and nested/code mappings preserved; loaded preview bundle matches fixed disk output."
+      },
+      {
+        "id": "updates",
+        "result": "passed",
+        "details": "All added/deleted targets match the legacy oracle; empty and cleared updates restore exact unmarked content."
+      },
+      {
+        "id": "source-sync",
+        "result": "passed",
+        "details": "Source rows 80 and 5 scroll correctly; preview double-click reveals the expected source line."
+      },
+      {
+        "id": "side-by-side",
+        "result": "passed",
+        "details": "Both real diff sides preserve exact text and markers; scrolling synchronizes in both directions."
+      },
+      {
+        "id": "inline",
+        "result": "passed",
+        "details": "Inline diff markers and indicators remain correct; keyboard anchor and Ctrl+Home navigation work."
+      },
+      {
+        "id": "clear-real-diff",
+        "result": "passed",
+        "details": "Real edited document is byte-for-byte original; preview has exact original text and no stale diff decorations."
+      }
+    ],
+    "checks": [
+      "ordinary exact text, nested lists, multiline paragraph/code, zero diff markers, loaded bundle hash",
+      "unordered and duplicate changes, added/deleted classes versus legacy oracle, incoming predecorated HTML, empty arrays, undefined changes, empty document, fresh restored mapping",
+      "real source selections scroll preview forward/backward, active line, double-click reveals exact source line",
+      "real side-by-side original/modified exact source text and separate tooltip text, all added/deleted markers, inner highlights, forward/backward and reverse-direction scroll sync",
+      "real inline exact text, added markers, deletion indicators, modification gutters, labeled keyboard link and Ctrl+Home",
+      "real document edit refreshes inline diff, exact restored text, zero diff classes/indicators/gutters/highlights"
+    ],
+    "loadedBundleSha256": "26081614ecc3b598967c9e6b2c204951ae34cf1f8a2de6827dc985b53ceb2d5b",
+    "scrollSettlingMs": 250,
+    "doubleClickSetting": true,
+    "textOracle": "Source content and separately rendered tooltip text are both compared exactly."
+  }
+}
