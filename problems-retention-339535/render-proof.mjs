@@ -14,9 +14,9 @@ const ffmpeg = process.env.FFMPEG_PATH;
 const ffprobe = process.env.FFPROBE_PATH;
 assert.ok(ffmpeg && ffprobe, 'Set FFMPEG_PATH and FFPROBE_PATH');
 const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
-const metrics = read('metrics.json');
+const metrics = read('metrics-cache-review.json');
 const baselineCommit = '6fad7188e7dbf7db564e5e4a85960eb2bf69bdf4';
-const fixedCommit = '278012e774a91c3429e087dff94fb01b844be907';
+const fixedCommit = '1712572f00875335af298c1fd2a7d940ec9d819e';
 const colors = { text: 'e6edf3', muted: '9ba7b4', grid: '30363d', before: 'ff7b72', after: '3fb950' };
 const format = (value, digits = 0) => value.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
 const range = (stage, key, digits) => {
@@ -25,7 +25,7 @@ const range = (stage, key, digits) => {
 };
 const samples = {};
 for (const stage of ['before', 'after']) {
-	const raw = read(path.join(stage, 'run-1.json'));
+	const raw = read(path.join(stage === 'after' ? 'after-cache-review' : stage, 'run-1.json'));
 	assert.deepEqual(raw.input, { files: 500, markersPerFile: 4, markers: 2000, messageCharacters: 77, payloadBytes: 1478001 });
 	const cycles = raw.samples.filter(sample => sample.mode === 'hide-update-show');
 	samples[stage] = cycles.map(sample => ({
@@ -63,7 +63,7 @@ const card = [
 	text('Same 2,000 diagnostics / 500 URIs / seven hide-update-show cycles', 40, 82, 24),
 	text('Three fresh Windows Code OSS Dev windows per side', 40, 119, 20, colors.muted),
 	text('BEFORE / 6fad7188', 505, 174, 24, colors.before, true),
-	text('AFTER / 278012e7', 855, 174, 24, colors.after, true),
+	text(`AFTER / ${fixedCommit.slice(0, 8)}`, 855, 174, 24, colors.after, true),
 ];
 const rows = [
 	['Current diagnostics', '2,000', '2,000', 236, 36, false],
@@ -136,7 +136,7 @@ for (const stage of ['before', 'after']) {
 	assert.equal(probe.streams[0].height, 680);
 	assert.ok(Number(probe.format.duration) >= 3 && Number(probe.format.duration) <= 5);
 	assert.ok(Number(probe.format.size) < 8 * 1024 * 1024);
-	clips.push({ file: `${stage}.gif`, source: `${stage}/run-1.json`, kind: 'recorded data replay, not elapsed-action playback', heapOrigin: 'First hide/update/show cycle (warmup) subtracted from usedSize in every plotted sample; no interpolation.', ...probe });
+	clips.push({ file: `${stage}.gif`, source: `${stage === 'after' ? 'after-cache-review' : stage}/run-1.json`, kind: 'recorded data replay, not elapsed-action playback', heapOrigin: 'First hide/update/show cycle (warmup) subtracted from usedSize in every plotted sample; no interpolation.', ...probe });
 	for (const frame of frames) {
 		fs.unlinkSync(path.join(root, frame));
 	}
@@ -149,7 +149,7 @@ const provenance = {
 	preservedHunterCommit: 'dcb81648f8a8f1863d2577f8fec98e805e5f95a0',
 	scenarioSha256: createHash('sha256').update(fs.readFileSync(path.join(root, 'problems-retention.scenario.cjs'))).digest('hex'),
 	input: read(path.join('before', 'run-1.json')).input,
-	build: 'Both measured sides used npm run transpile-client; npm run compile-client also passed for the fix.',
+	build: 'Both measured sides used npm run transpile-client; npm run gulp compile-client also passed for the final fix.',
 	sampling: 'Three fresh windows per side; seven cycles per mode; first cycle warmup; six consecutive post-GC heap differences per window; medians of those six differences.',
 	card: 'comparison.png',
 	cardScope: 'All three windows. Exact final model counts and range of per-window median heap deltas.',

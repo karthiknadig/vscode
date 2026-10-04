@@ -19,6 +19,11 @@ async function checkMode(context, mode, revision) {
 	}, revision);
 	await context.workbench.quickaccess.runCommand('workbench.action.togglePanel');
 	await context.page.waitForFunction(() => !window.__diagnosticsPerf.view.isVisible());
+	const hidden = await context.page.evaluate(() => {
+		const { view } = window.__diagnosticsPerf;
+		return { resources: view.getAllResourceMarkers().length, markers: view.markersModel.total, viewStates: view.markersViewModel.markersViewStates.size };
+	});
+	assert.deepEqual(hidden, { resources: 0, markers: 0, viewStates: 0 });
 	await context.page.evaluate(revision => window.__diagnosticsPerf.update(revision, false), revision + 1);
 	await context.workbench.quickaccess.runCommand('workbench.action.togglePanel');
 	await context.page.waitForFunction(revision => {
@@ -54,7 +59,7 @@ async function checkMode(context, mode, revision) {
 	}));
 	assert.equal(navigation.focusInProblems, true);
 	assert.ok(navigation.label, 'The focused Problems widget must have an accessible label');
-	observations.push({ ...state, navigation });
+	observations.push({ ...state, hidden, navigation });
 	return JSON.stringify(observations.at(-1));
 }
 

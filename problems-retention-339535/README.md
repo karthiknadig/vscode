@@ -7,11 +7,11 @@ Evidence for [microsoft/vscode#339535](https://github.com/microsoft/vscode/issue
 | Current diagnostics | 2,000 | 2,000 |
 | View models after seven cycles | 15,976 | 2,000 |
 | Obsolete view models | 13,976 | 0 |
-| Per-window median heap growth, MiB/cycle | 19.66-19.77 | 0.14-0.18 |
-| Visible-update control, MiB/cycle | 0.043-0.044 | 0.041-0.047 |
+| Per-window median heap growth, MiB/cycle | 19.66-19.77 | 0.13-0.14 |
+| Visible-update control, MiB/cycle | 0.043-0.044 | 0.033-0.046 |
 | States after explicit clear | 0 | 0 |
 
-Before: `6fad7188e7dbf7db564e5e4a85960eb2bf69bdf4`. After: `278012e774a91c3429e087dff94fb01b844be907`.
+Before: `6fad7188e7dbf7db564e5e4a85960eb2bf69bdf4`. After: `1712572f00875335af298c1fd2a7d940ec9d819e`.
 Three fresh Windows Code OSS Dev windows per side used the same scenario and `npm run transpile-client` build path. Each mode has seven cycles; the first is warmup. Each quoted per-window median uses six consecutive post-GC heap differences. The initial hide/show allocation is excluded from those warmed medians, not from the published raw data.
 
 ## What triggers it
@@ -49,13 +49,13 @@ The baseline fails `expected-release` with 15,976 view models and 13,976 obsolet
 
 The scenario is preserved byte-for-byte, including its historical `source` metadata; this evidence resolves #339535, not that earlier investigated report. Its SHA-256 is `0c4d6b74100faa4fd538b61d32733cbd558d655008e6c4fe2295d29c9d9d6f2f`.
 
-For supplementary UI checks, keep [behavior.scenario.cjs](./behavior.scenario.cjs) beside the retention scenario and run it with the same runner. It verifies tree/table mode, current text, the 500-of-2,000 filter, Home/ArrowDown navigation, accessible focus labels, and final clear.
+For supplementary UI checks, keep [behavior.scenario.cjs](./behavior.scenario.cjs) beside the retention scenario and run it with the same runner. It verifies tree/table mode, current text, the 500-of-2,000 filter, Home/ArrowDown navigation, accessible focus labels, and final clear. The final reset-cache correction also verifies zero cached resources, markers, and view states while hidden. All 53 targeted tests pass; five cache-specific checks failed on the initial PR head before this correction.
 
 ## Read the evidence
 
 - [Comparison card](./comparison.png): exact state counts and ranges across all three windows.
 - [Before GIF](./before.gif) / [After GIF](./after.gif): 4.51-second **recorded-data replays**, not elapsed-action playback. They show run 1, use identical scales, and subtract the first warmup cycle from every plotted heap sample. Zero-valued bars use a small baseline marker.
-- [Metrics](./metrics.json), [provenance](./proof-provenance.json), and raw [before](./before/) / [after](./after/) JSON samples.
+- [Final metrics](./metrics-cache-review.json), [provenance](./proof-provenance.json), and raw [before](./before/) / [after](./after-cache-review/) JSON samples. The earlier `metrics.json` and `after` directory are preserved as initial-PR evidence.
 - [UI behavior results](./behavior-results.json).
 - [Proof renderer](./render-proof.mjs): regenerates the card and GIFs from the published data using FFmpeg and Windows Segoe UI fonts.
 

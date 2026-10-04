@@ -8,6 +8,11 @@
     },
     "viewStates": 2000,
     "currentTextVisible": true,
+    "hidden": {
+      "resources": 0,
+      "markers": 0,
+      "viewStates": 0
+    },
     "navigation": {
       "focusInProblems": true,
       "role": "tree",
@@ -23,6 +28,11 @@
     },
     "viewStates": 2000,
     "currentTextVisible": true,
+    "hidden": {
+      "resources": 0,
+      "markers": 0,
+      "viewStates": 0
+    },
     "navigation": {
       "focusInProblems": true,
       "role": "list",

@@ -1,7 +1,7 @@
 {
   "issue": "https://github.com/microsoft/vscode/issues/339535",
   "baselineCommit": "6fad7188e7dbf7db564e5e4a85960eb2bf69bdf4",
-  "fixedCommit": "278012e774a91c3429e087dff94fb01b844be907",
+  "fixedCommit": "1712572f00875335af298c1fd2a7d940ec9d819e",
   "preservedHunterCommit": "dcb81648f8a8f1863d2577f8fec98e805e5f95a0",
   "scenarioSha256": "0c4d6b74100faa4fd538b61d32733cbd558d655008e6c4fe2295d29c9d9d6f2f",
   "input": {
@@ -11,7 +11,7 @@
     "messageCharacters": 77,
     "payloadBytes": 1478001
   },
-  "build": "Both measured sides used npm run transpile-client; npm run compile-client also passed for the fix.",
+  "build": "Both measured sides used npm run transpile-client; npm run gulp compile-client also passed for the final fix.",
   "sampling": "Three fresh windows per side; seven cycles per mode; first cycle warmup; six consecutive post-GC heap differences per window; medians of those six differences.",
   "card": "comparison.png",
   "cardScope": "All three windows. Exact final model counts and range of per-window median heap deltas.",
@@ -36,7 +36,7 @@
     },
     {
       "file": "after.gif",
-      "source": "after/run-1.json",
+      "source": "after-cache-review/run-1.json",
       "kind": "recorded data replay, not elapsed-action playback",
       "heapOrigin": "First hide/update/show cycle (warmup) subtracted from usedSize in every plotted sample; no interpolation.",
       "programs": [],
@@ -49,7 +49,7 @@
       ],
       "format": {
         "duration": "4.510000",
-        "size": "81158"
+        "size": "79236"
       }
     }
   ],
