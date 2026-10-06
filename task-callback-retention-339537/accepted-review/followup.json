@@ -1,0 +1,42 @@
+{
+	"pr": 339553,
+	"issue": 339537,
+	"reviewComments": [4191162998, 4191163004, 4191163008],
+	"baseline": "0817aaa824590067854c361e77eb973a08b3cf48",
+	"before": "0743932b1b5bccd4c60a9f37b6262186d6330a43",
+	"after": "61b4d41953fd3703e71d33545daa7267f2a17dbe",
+	"changes": [
+		"Custom execution acceptance/finished notifications bracket dependency and input waits. Aborted starts release reservations; these ownership notifications do not overwrite task activity state.",
+		"An opaque token per accepted Task instance keys reserve/start/end independently of the shared task-definition ID. One end or legacy duplicate cleanup cannot cancel another pending instance.",
+		"Reserved callback selection survives disposal restoring an older peer. Explicit later discovery is versioned and still takes precedence, preserving that existing behavior.",
+		"Active callback ownership is preserved for remaining concurrent instances and released on the matching end."
+	],
+	"regressions": {
+		"unitBefore": "Reserved-callback disposal fails in Node and worker; concurrent pending callback/End case fails. Explicit rediscovery controls pass.",
+		"realApiBaseline": "All three new tests pass.",
+		"realApiOldPr": "Dependency-success and concurrent-instance cases time out; failed-dependency control passes.",
+		"realApiFixed": "All three pass using workbench Run Task and the existing registered custombuildscript task type.",
+		"dependencyGate": "Finite explicitly released CustomExecution dependency, no shell/dependency installation; same task-system dependency wait.",
+		"instance": "instanceLimit2 with two separately gated callbacks, exact terminal markers, distinct terminals and no premature close.",
+		"extraCases": "Both immediate/IPC delivery, cancellation during resolution, zero pending/active reservation state after completion, and legacy duplicate-end isolation."
+	},
+	"validation": [
+		{ "command": "npm run transpile-client", "result": "passed; final source output refreshed" },
+		{ "command": "npm run typecheck-client", "result": "passed" },
+		{ "command": "npm run gulp compile-extension:vscode-api-tests", "result": "passed" },
+		{ "command": "scripts\\test.bat --run src\\vs\\workbench\\api\\test\\node\\extHostTask.test.ts --run src\\vs\\workbench\\api\\test\\browser\\mainThreadTask.test.ts --run src\\vs\\workbench\\contrib\\tasks\\test\\browser\\taskTerminalStatus.test.ts --run src\\vs\\workbench\\contrib\\tasks\\test\\common\\taskConfiguration.test.ts", "result": "133 passed, 5 existing skips" },
+		{ "command": "scripts\\test-integration.bat --suite api-folder --grep \"vscode API - tasks\"", "result": "12 passed, 1 existing skip; actual Mocha output verified" },
+		{ "command": "node build\\lib\\formatter.ts --verify <all eight changed TypeScript files>; changed-file ESLint", "result": "passed" }
+	],
+	"memory": {
+		"scenario": "Original task-provider-retention.cjs, unchanged",
+		"freshWindows": 3,
+		"result": "3/3 passed: distinct-ID retained payload bytes0, no-discovery0, reused-IDgrowth0, live callback payloads0.",
+		"log": "oct6-tasks-memory-final.log",
+		"signals": "External/native-backed payload observations; arrayBuffers is not used as proof."
+	},
+	"scope": "Windows Dev/Electron43.7.5. Internal ownership tokens are instance-specific; existing public definition-ID execution bookkeeping is not presented as a redesigned API.",
+	"initialHarnessCorrections": "Unregistered custom task types do not exercise configuration dependencies/instanceLimit. Final tests reuse the existing declared custombuildscript type and exact definition filter; initial setup failures were not treated as product proof.",
+	"originalEvidence": "Previous comparison images remain tied to their original measured source; final-head validation is reported separately.",
+	"humanThreads": "Replied with proof, left open for reviewer confirmation."
+}
