@@ -1,0 +1,35 @@
+{
+	"pr": 339545,
+	"issue": 339536,
+	"reviewComment": 4191163744,
+	"beforeHead": "47cf6ef3570078b80cee82628c999de0217cb47c",
+	"afterHead": "55f4e0e4643895ca572ca48e81e4a3223d846d5c",
+	"result": "Verified and fixed; human review thread left open.",
+	"liveReproduction": {
+		"scenario": "mapping.scenario.cjs",
+		"boundary": "Actual built-in Markdown preview/morphdom with valid synthetic added-line metadata, followed by a real WorkspaceEdit inserting two leading source lines.",
+		"before": "Incoming source lines were2/4, but the old PR kept paragraph attributes0/2.",
+		"after": "Same scenario updates Alpha/Beta to2/4, matching incoming source rather than stale DOM.",
+		"beforeLog": "before-ui-verified.log",
+		"afterLog": "after-ui.log",
+		"initialHarnessFailure": "An initial whole-file diff produced a different wrapped/inline-highlight DOM and failed setup; it was not treated as product reproduction."
+	},
+	"fix": "Synchronize the matched element itself and mapped descendants before returning false from reconciliation. Skip unchanged values. Shared DOM-independent attribute contract permits Node extension tests without global DOM stubs.",
+	"tests": [
+		{ "command": "npm --prefix extensions\\markdown-language-features run compile", "result": "passed" },
+		{ "command": "node node_modules\\@typescript\\native\\lib\\tsc.js --project extensions\\markdown-language-features\\preview-src\\tsconfig.json --noEmit", "result": "passed" },
+		{ "command": "scripts\\test-integration.bat --suite markdown --grep \"markdown.SourceLineMap|markdown.engine\"", "result": "18 passed; actual Mocha output checked" },
+		{ "command": "npx --no-install eslint --max-warnings 0 extensions\\markdown-language-features\\preview-src\\index.ts extensions\\markdown-language-features\\src\\util\\sourceLineMap.ts extensions\\markdown-language-features\\src\\test\\sourceLineMap.test.ts", "result": "passed" },
+		{ "command": "node build\\lib\\formatter.ts --replace --verify extensions\\markdown-language-features\\preview-src\\index.ts extensions\\markdown-language-features\\src\\util\\sourceLineMap.ts extensions\\markdown-language-features\\src\\test\\sourceLineMap.test.ts", "result": "passed" }
+	],
+	"existingUiCompatibility": "All six original live ordinary/inline/side-by-side diff, scroll/navigation/marking/clear checks passed.",
+	"unchangedPerformanceScenario": {
+		"freshWindows": 3,
+		"result": "3/3 passed; original200ms expectation and exact text/marker oracles unchanged.",
+		"largeInputBytes": 944000,
+		"paragraphs": 16000,
+		"markingMedianMs": [147.2, 145.5, 149.7],
+		"sameHtmlControlMedianMs": [45.8, 45.5, 46.7]
+	},
+	"limits": "Windows Dev/Electron43.7.5. Synthetic diff metadata is explicit; actual Markdown generation, source edit and morphdom run in product. No installed-release or full diff-opening latency claim. Original PR images retain their original head provenance."
+}

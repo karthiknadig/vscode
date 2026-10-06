@@ -1,0 +1,11 @@
+{
+	"name": "markdown-mapping-review",
+	"publisher": "local-review",
+	"version": "0.0.1",
+	"engines": { "vscode": "^1.100.0" },
+	"main": "./extension.cjs",
+	"activationEvents": ["onCommand:markdownMappingReview.run"],
+	"contributes": {
+		"commands": [{ "command": "markdownMappingReview.run", "title": "Markdown Mapping Review: Run" }]
+	}
+}
