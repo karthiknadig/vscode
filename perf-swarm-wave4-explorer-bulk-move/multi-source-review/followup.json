@@ -1,0 +1,370 @@
+{
+  "issue": 339610,
+  "pr": 339614,
+  "reviewComment": 4189389818,
+  "beforeHead": "19ad8071e6989a74ab0697bf62c14ca9c0e9f2c8",
+  "afterHead": "cf33d529444822398262b7a5593f9e841b8981eb",
+  "cause": "Destination reconciliation preceded removal from every source parent, so a later source could delete a moved object from the tree lookup.",
+  "fix": "Refresh source parents first, then final destination parents; visit parents in both roles in both phases. Attempt destinations even after source errors while preserving the errors.",
+  "unitRegression": "Four shared-target/exchange file/folder cases failed before; two chain controls passed. All six pass after, using the real WorkbenchCompressibleAsyncDataTree.",
+  "liveRegression": "Same live Ctrl-select/drag scenario fails before: y.txt present under c but tree.hasNode false. After: both files and moved folders/descendants are indexed, revealable, selected and focused; new child updates appear without a manual refresh.",
+  "tests": [
+    {
+      "command": "scripts\\test.bat --run src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerService.test.ts --run src\\vs\\base\\test\\browser\\ui\\tree\\asyncDataTree.test.ts",
+      "result": "49 passed"
+    },
+    {
+      "command": "scripts\\test.bat --run src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerService.test.ts --run src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerModel.test.ts --run src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerView.test.ts --run src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerFileNestingTrie.test.ts --run src\\vs\\workbench\\contrib\\files\\test\\browser\\fileActions.test.ts --run src\\vs\\workbench\\contrib\\bulkEdit\\test\\browser\\bulkFileEdits.test.ts --run src\\vs\\workbench\\services\\workingCopy\\test\\browser\\workingCopyFileService.test.ts",
+      "result": "162 passed, 1 existing skip; overlaps ExplorerService selection above"
+    },
+    {
+      "command": "npm run typecheck-client",
+      "result": "passed"
+    },
+    {
+      "command": "node build\\lib\\formatter.ts --replace --verify src\\vs\\workbench\\contrib\\files\\browser\\explorerService.ts src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerService.test.ts",
+      "result": "passed"
+    },
+    {
+      "command": "npx --no-install eslint --max-warnings 0 src\\vs\\workbench\\contrib\\files\\browser\\explorerService.ts src\\vs\\workbench\\contrib\\files\\test\\browser\\explorerService.test.ts",
+      "result": "passed"
+    }
+  ],
+  "unchangedPerformanceScenario": {
+    "runs": "3/3 passed",
+    "windows": [
+      {
+        "window": 1,
+        "expandedMedianMs": 229.80000001192093,
+        "collapsedMedianMs": 181.39999997615814,
+        "samples": [
+          {
+            "arm": "expanded",
+            "iteration": 0,
+            "operationMs": 234.80000001192093,
+            "paintedMs": 247.89999997615814
+          },
+          {
+            "arm": "expanded",
+            "iteration": 1,
+            "operationMs": 238.19999998807907,
+            "paintedMs": 252
+          },
+          {
+            "arm": "expanded",
+            "iteration": 2,
+            "operationMs": 228.0999999642372,
+            "paintedMs": 241.79999995231628
+          },
+          {
+            "arm": "expanded",
+            "iteration": 3,
+            "operationMs": 229.10000002384186,
+            "paintedMs": 242.80000001192093
+          },
+          {
+            "arm": "expanded",
+            "iteration": 4,
+            "operationMs": 229.80000001192093,
+            "paintedMs": 243.30000001192093
+          },
+          {
+            "arm": "expanded",
+            "iteration": 5,
+            "operationMs": 238.20000004768372,
+            "paintedMs": 251.80000001192093
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 0,
+            "operationMs": 182.60000002384186,
+            "paintedMs": 193.4000000357628
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 1,
+            "operationMs": 181.89999997615814,
+            "paintedMs": 182.89999997615814
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 2,
+            "operationMs": 180.5,
+            "paintedMs": 186.19999998807907
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 3,
+            "operationMs": 177.60000002384186,
+            "paintedMs": 178.69999998807907
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 4,
+            "operationMs": 186,
+            "paintedMs": 187.5
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 5,
+            "operationMs": 181.39999997615814,
+            "paintedMs": 182.39999997615814
+          }
+        ]
+      },
+      {
+        "window": 2,
+        "expandedMedianMs": 231.69999998807907,
+        "collapsedMedianMs": 179.20000004768372,
+        "samples": [
+          {
+            "arm": "expanded",
+            "iteration": 0,
+            "operationMs": 231.89999997615814,
+            "paintedMs": 245.80000001192093
+          },
+          {
+            "arm": "expanded",
+            "iteration": 1,
+            "operationMs": 234.5,
+            "paintedMs": 248.10000002384186
+          },
+          {
+            "arm": "expanded",
+            "iteration": 2,
+            "operationMs": 230.0999999642372,
+            "paintedMs": 243.89999997615814
+          },
+          {
+            "arm": "expanded",
+            "iteration": 3,
+            "operationMs": 233.10000002384186,
+            "paintedMs": 246.89999997615814
+          },
+          {
+            "arm": "expanded",
+            "iteration": 4,
+            "operationMs": 224.80000001192093,
+            "paintedMs": 238.30000001192093
+          },
+          {
+            "arm": "expanded",
+            "iteration": 5,
+            "operationMs": 231.69999998807907,
+            "paintedMs": 245.19999998807907
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 0,
+            "operationMs": 177.39999997615814,
+            "paintedMs": 186.0999999642372
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 1,
+            "operationMs": 179.20000004768372,
+            "paintedMs": 180.30000001192093
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 2,
+            "operationMs": 224.69999998807907,
+            "paintedMs": 236.60000002384186
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 3,
+            "operationMs": 182.89999997615814,
+            "paintedMs": 184
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 4,
+            "operationMs": 177.69999998807907,
+            "paintedMs": 179.60000002384186
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 5,
+            "operationMs": 178.10000002384186,
+            "paintedMs": 179.19999998807907
+          }
+        ]
+      },
+      {
+        "window": 3,
+        "expandedMedianMs": 231.39999997615814,
+        "collapsedMedianMs": 176.5,
+        "samples": [
+          {
+            "arm": "expanded",
+            "iteration": 0,
+            "operationMs": 231.5999999642372,
+            "paintedMs": 245.19999998807907
+          },
+          {
+            "arm": "expanded",
+            "iteration": 1,
+            "operationMs": 237.89999997615814,
+            "paintedMs": 251.89999997615814
+          },
+          {
+            "arm": "expanded",
+            "iteration": 2,
+            "operationMs": 225.30000001192093,
+            "paintedMs": 238.80000001192093
+          },
+          {
+            "arm": "expanded",
+            "iteration": 3,
+            "operationMs": 229.4000000357628,
+            "paintedMs": 243.30000001192093
+          },
+          {
+            "arm": "expanded",
+            "iteration": 4,
+            "operationMs": 231.39999997615814,
+            "paintedMs": 245
+          },
+          {
+            "arm": "expanded",
+            "iteration": 5,
+            "operationMs": 241.4000000357628,
+            "paintedMs": 255
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 0,
+            "operationMs": 176.9000000357628,
+            "paintedMs": 192.69999998807907
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 1,
+            "operationMs": 178.30000001192093,
+            "paintedMs": 180.19999998807907
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 2,
+            "operationMs": 176.5,
+            "paintedMs": 188.30000001192093
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 3,
+            "operationMs": 175.19999998807907,
+            "paintedMs": 177.4000000357628
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 4,
+            "operationMs": 176,
+            "paintedMs": 187.89999997615814
+          },
+          {
+            "arm": "collapsed",
+            "iteration": 5,
+            "operationMs": 179.20000004768372,
+            "paintedMs": 180.30000001192093
+          }
+        ]
+      }
+    ],
+    "combinedExpandedMedianMs": 231.39999997615814
+  },
+  "strictPaintedMedianMs": 302.10000002384186,
+  "parentRefreshesThroughQuiescence": 2,
+  "renderMethodsThroughQuiescence": [
+    {
+      "className": "AsyncDataTree",
+      "count": 2
+    },
+    {
+      "className": "CompressibleAsyncDataTree",
+      "count": 2
+    }
+  ],
+  "compatibility": [
+    {
+      "action": "real 32-file drag",
+      "dispatchMs": 190,
+      "paintedIncludingAutomationMs": 452.89999997615814,
+      "totalThroughQuiescenceMs": 1385,
+      "operationMs": 0,
+      "paintedExactMs": 262.89999997615814,
+      "quiescentMs": 961.5,
+      "expanded": true,
+      "visibleChecks": [
+        "case00032.ts",
+        "case01023.ts",
+        "case00000.ts",
+        "case00031.ts"
+      ],
+      "sourceTreeCount": 992,
+      "targetTreeCount": 32,
+      "focus": [],
+      "selection": []
+    },
+    {
+      "action": "undo",
+      "dispatchMs": 7,
+      "paintedIncludingAutomationMs": 281.80000001192093,
+      "totalThroughQuiescenceMs": 1300,
+      "operationMs": 0,
+      "paintedExactMs": 274.80000001192093,
+      "quiescentMs": 1183.4000000357628,
+      "expanded": true,
+      "visibleChecks": [
+        "case00000.ts",
+        "case01023.ts"
+      ],
+      "sourceTreeCount": 1024,
+      "targetTreeCount": 0,
+      "focus": [],
+      "selection": []
+    },
+    {
+      "action": "redo",
+      "dispatchMs": 10,
+      "paintedIncludingAutomationMs": 260.19999998807907,
+      "totalThroughQuiescenceMs": 1445,
+      "operationMs": 0,
+      "paintedExactMs": 250.19999998807907,
+      "quiescentMs": 1186.300000011921,
+      "expanded": true,
+      "visibleChecks": [
+        "case00032.ts",
+        "case01023.ts",
+        "case00000.ts",
+        "case00031.ts"
+      ],
+      "sourceTreeCount": 992,
+      "targetTreeCount": 32,
+      "focus": [],
+      "selection": []
+    },
+    {
+      "action": "keyboard cut/paste 32 files",
+      "paintedIncludingAutomationMs": 367.30000001192093,
+      "totalThroughQuiescenceMs": 1268,
+      "operationMs": 0,
+      "paintedExactMs": 346.30000001192093,
+      "quiescentMs": 1151,
+      "expanded": true,
+      "visibleChecks": [
+        "case00000.ts",
+        "case01023.ts"
+      ],
+      "sourceTreeCount": 1024,
+      "targetTreeCount": 0,
+      "focus": [
+        "case00000.ts"
+      ],
+      "selection": [
+        "case00000.ts"
+      ]
+    }
+  ],
+  "limits": "Windows Dev / Electron 43.7.5; synthetic local workspaces. Original PR comparison images remain pinned to the initial optimization head; these are separate final-head validation results."
+}
